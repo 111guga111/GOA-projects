@@ -149,7 +149,7 @@ exitonclick()
 print("Hello World")
 print("Guram Topchishvili, Known as Guga")
 
-#proggraming is fun
+#programing is fun
 
 print(5) #integer (int)
 print("5")#string (str)
