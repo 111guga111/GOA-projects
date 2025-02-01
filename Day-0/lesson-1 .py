@@ -6,4 +6,4 @@ height ="160,5cm" #float
 programming_is_fun=True
 knows_proggraming=False
 
-print (age + ' ' + "year old" + ' ' + height + " " + name + ' ' + username + ' ' + 'came home after school to learn proggraming') 
+print (age + ' ' + "year old" + ' ' + height + " " + name + ' ' + username + ' ' + 'came home after school to learn programing') 
