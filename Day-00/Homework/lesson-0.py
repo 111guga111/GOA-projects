@@ -153,6 +153,9 @@ print("Guram Topchishvili, Known as Guga")
 
 print(5) #integer (int)
 print("5")#string (str)
+print(5.5)#float
 
 # cant add up different types
-print(5 + int("5")) #match one of them to the ather type
+print(5+ int("5")) # change type
+print(5+ float("5.5")) # change type
+print(str(5)+ " " + "Guga") # change type
