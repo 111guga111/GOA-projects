@@ -6,3 +6,5 @@ print("Guga is"+ " " + "16" + " " + "years old")
 Guga_is_tall = False
 Guga_knows_hes_short = True
 GOA_will_save_him = True
+print (100>10)
+print (Guga_knows_hes_short)
