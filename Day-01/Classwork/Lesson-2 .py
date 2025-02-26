@@ -1,5 +1,5 @@
 
-#data typy
+#data type
 
 #string
 #integer
@@ -28,7 +28,17 @@ False
 
 "11" + "11" # 11 11
 
-"hello" - "Lasha" #not possible
+"hello" - "Lasha" #Error
 
 11 - 11 #0
+
+"hello" * "Lasha" #Error
+
+11 * 11 #121
+
+"hello" * 2 #HelloHello
+
+"Hello" / 2 #Error
+
+"Hello" + 2 #Error
 
