@@ -17,6 +17,5 @@ if count==0:
  print("theres no A in your name")
 
 #3
-#True or True and False or True and False and False and True or False = true
-#first we do (and) and after that we do (or)
+print("True or True and False or True and False and False and True or False = true, first we do (and) and after that we do (or)")
  
