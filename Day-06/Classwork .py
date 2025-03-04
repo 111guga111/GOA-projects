@@ -1,6 +1,6 @@
 word=input("word: ")
 num=int(input("num: "))
-print((word)[num])
+print(word[num])
 
 
 for Y in range(100,1,-1):
@@ -24,5 +24,3 @@ if number1 %2==0:
    print("yes")
 else:
   print("no")
-
-        
