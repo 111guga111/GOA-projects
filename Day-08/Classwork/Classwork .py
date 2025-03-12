@@ -27,7 +27,7 @@ print(greet("luka", "lasha"))
 
 name1="luka"
 name2="lasha"
-def greet(name, name2):
-    return "hello" + name + name2
+def greet(name1, name2):
+    return "hello" + name1 + name2
 print(greet("deme", "ana"))
 
