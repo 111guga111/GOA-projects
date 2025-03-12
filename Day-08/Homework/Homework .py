@@ -43,8 +43,7 @@ def simple_multiplication(number) :
         return number*8
     return number*9
 #6
-name1=input("name: ")
-name2=input("username: ")
 def greet(name1, name2):
     return name1[0]+"."+name2
-print (greet(name1, name2))
+print (greet("Guga", "Topchishvili"))
+print (greet("Lasha", "Lomidze"))
