@@ -20,7 +20,7 @@ for O in word:
 print(count)
 
 #4
-correct_password=("nice")
+correct_password="nice"
 huh=0
 password=input("password: ")
 while password!=correct_password and huh<3:
