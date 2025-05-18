@@ -27,7 +27,7 @@ def datas(a):
         return bool
     elif most == floats:
         return float
-print (datas(["guga","nika",10,12,40,True,False,True]))
+print (datas(["guga","nika",10,12,40,40,True,False,True]))
 
 #3
 def dataclean(a):

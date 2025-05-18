@@ -1,8 +1,11 @@
 
 #1 function
 def time(d,m,y):
-    if d>31 or m>12:
+    if d>31:
         return "invalid input"
+    if type(m)==int:
+        if m>12:
+            return "invalid input"
     month = ["january", "february", "march", "april", "may", "june","july", "august", "september", "october", "november", "december"]
     if str(m).isalpha():
         m=m.lower()
@@ -12,7 +15,7 @@ def time(d,m,y):
     if m<10:
         m="0"+str(m)
     return f"{d}/{m}/{y}"
-print(time(14,12,2032))
+print(time(14,8,2032))
 
 #1
 month = ["january", "february", "march", "april", "may", "june","july", "august", "september", "october", "november", "december"]
