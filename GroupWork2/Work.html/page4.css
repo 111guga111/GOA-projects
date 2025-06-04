@@ -1,0 +1,69 @@
+.bmw, .corvette, .mercedes, .audi, .ferrari, .toyota, .porsche, .tesla, .lamborghini {
+  
+  position: absolute;
+  font-size: 150%;
+  text-align: center;
+  width: 30%;
+  height: 60%;
+}
+
+.bmw {
+  margin-top: 8%;
+  margin-left: 5%;
+}
+.corvette {
+  margin-top: 8%;
+  margin-left: 65%;
+}
+.mercedes {
+  margin-top: 20%;
+  margin-left: 35%;
+}
+.audi {
+  margin-top: 44%;
+  margin-left: 5%;
+}
+.ferrari {
+  margin-top: 44%;
+  margin-left: 65%;
+}
+.toyota {
+  margin-top: 59%;
+  margin-left: 35%;
+}
+.porsche {
+  margin-top: 80%;
+  margin-left: 5%;
+}
+.tesla {
+  margin-top: 80%;
+  margin-left: 65%;
+}
+.lamborghini {
+  margin-top: 100%;
+  margin-left: 35%;
+}
+
+
+.bmw img, .corvette img, .mercedes img, .audi img, .ferrari img, .toyota img, .porsche img, .tesla img, .lamborghini img {
+  box-shadow: 0px 0px 20px 3px black;
+  height: 300px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-shadow: 1px 1px 3px black;
+}
+
+
+#BMW, #cor, #mer, #audi, #ferrari, #toyota, #porsche, #tesla, #lamborghini,
+#BMW1, #cor1, #mer1, #audi1, #ferrari1, #toyota1, #porsche1, #tesla1, #lamborghini1 {
+  text-shadow: 1px 1px 3px black;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+
+
+
+
+
+

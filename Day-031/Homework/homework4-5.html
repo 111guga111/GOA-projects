@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple List & Nav Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffefc;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-bar {
+      background-color: #e6f8f7;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-bar a {
+      color: orange;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-bar a:visited {
+      color: red;
+    }
+
+    .content {
+      width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .list-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .inside-list {
+      list-style-position: inside;
+      background-color: #fff3e0;
+      padding: 15px;
+      margin-bottom: 40px;
+      border-left: 5px solid orange;
+    }
+
+    .outside-list {
+      list-style-position: outside;
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-left: 5px solid teal;
+    }
+    .responsive{
+      position: absolute;
+      text-align: center;
+      top:80%;
+      left:25%;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <a href="homework.html" target="_blank">Page 1</a>
+    <a href="homework2-3.html" target="_blank">Page 2</a>
+    <a href="homework4-5.html" target="_blank">Page 3</a>
+  </div>
+
+  <div class="content">
+    <div class="list-title"> List-style-position: inside</div>
+    <ul class="inside-list">
+      <li>The bullet is inside the content box.</li>
+      <li>Wrapped text aligns under the bullet.</li>
+      <li>Great for compact layouts.</li>
+    </ul>
+
+    <div class="list-title"> List-style-position: outside</div>
+    <ul class="outside-list">
+      <li>The bullet is outside the content box.</li>
+      <li>Wrapped text aligns with the first line.</li>
+      <li>This is the default behavior.</li>
+    </ul>
+  </div>
+  <div class="responsive">
+  <h2>What is Responsive Design?</h2>
+  <p>Responsive design means a website changes its layout and size to look good on all devices — phones, tablets, and computers.</p>
+  <p>It uses flexible layouts, images, and CSS media queries to adjust to different screen sizes.</p>
+  <p>Goal: Make the site easy to use and read on any screen.</p>
+</div>
+</body>
+</html>

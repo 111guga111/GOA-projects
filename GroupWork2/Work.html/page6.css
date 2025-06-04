@@ -1,0 +1,32 @@
+.info{
+  position:absolute;
+  text-align: center;
+  top:11.5%;
+  left:4%;
+  border:2px solid black ;
+  box-shadow: 0px 0px 20px 3px black;
+  background-color: #99aac9;
+  padding-bottom:2%;
+  border-radius:20px;
+  font-size: 30px;
+}
+.info p{
+  color: black;
+  font-weight:500;
+}
+.info img{
+   object-fit: cover;
+   border-radius:20px;
+   width:800px;
+   height:400px;
+   box-shadow: 0px 0px 20px 3px black;
+}
+
+.map img{
+  margin-top:10%;
+  margin-left:50%;
+  position: absolute;
+  width:900px;
+  height:600px;
+  box-shadow: 0px 0px 20px 3px black;
+}

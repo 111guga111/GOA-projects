@@ -1,0 +1,20 @@
+
+.greeting,.greeting2{
+  width:90%;
+  position:absolute;
+  margin-top:5%;
+  left: 5%;
+  text-align:center;
+}
+.greeting p{
+  margin-top:1%;
+  font-size:40px;
+}
+.greeting2 p{
+  margin-top:1%;
+  font-size:30px;
+}
+#welcome,#welcome1{
+  color: black;
+  font-size: 50px;
+}

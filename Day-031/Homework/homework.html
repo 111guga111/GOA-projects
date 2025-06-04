@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List Style Position Example</title>
+  <style>
+    .inside-list {
+      list-style-position: inside;
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+
+    .outside-list {
+      list-style-position: outside;
+      background-color: #e0f7fa;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>list-style-position: inside</h2>
+  <ul class="inside-list">
+    <li>This is a list item that wraps to the next line and the text starts under the bullet.<br>
+    Another example using the "inside" setting.</li>
+  </ul>
+
+  <h2> list-style-position: outside</h2>
+  <ul class="outside-list">
+    <li>This is a list item that wraps to the next line and the text aligns with the start of the first line.<br>
+    Another example using the "outside" setting.</li>
+  </ul>
+  <p>outside (default):
+The bullet or number is placed outside the content box, to the left of the text.
+If the list item wraps onto multiple lines, the text aligns with the start of the text, not the bullet.
+
+inside:
+The bullet or number is placed inside the content box, as part of the text flow.
+If the text wraps, it aligns under the bullet, not under the start of the text.</p>
+</body>
+</html>

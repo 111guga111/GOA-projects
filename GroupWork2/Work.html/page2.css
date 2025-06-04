@@ -1,0 +1,61 @@
+.pizza, .burger, .sushi, .pasta, .steak, .salad, .cake, .icecream, .taco {
+  position: absolute;
+  font-size: 150%;
+  text-align: center;
+  width: 30%;
+  height: 60%;
+}
+
+.pizza {
+  margin-top: 8%;
+  margin-left: 5%;
+}
+
+.burger {
+  margin-top: 8%;
+  margin-left: 65%;
+}
+
+.sushi {
+  margin-top: 20%;
+  margin-left: 35%;
+}
+
+.pasta {
+  margin-top: 44%;
+  margin-left: 5%;
+}
+
+.steak {
+  margin-top: 47%;
+  margin-left: 65%;
+}
+
+.salad {
+  margin-top: 55%;
+  margin-left: 35%;
+}
+
+.cake {
+  margin-top: 83%;
+  margin-left: 5%;
+}
+
+.icecream {
+  margin-top: 83%;
+  margin-left: 65%;
+}
+
+.taco {
+  margin-top: 100%;
+  margin-left: 37%;
+}
+
+.pizza img, .burger img, .sushi img, 
+.pasta img, .steak img, .salad img, .cake img, .icecream img, .taco img {
+  box-shadow: 0px 0px 20px 3px black;
+  height: 300px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-shadow: 1px 1px 3px black;
+}
