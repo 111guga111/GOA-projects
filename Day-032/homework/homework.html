@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Div და Nav Styling</title>
+<style>
+
+  #div1 {
+    background-color: lightblue;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  .div2 {
+    background-color: lightgreen;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  div.div3 {
+    background-color: lightcoral;
+    color: white;
+    padding: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav li {
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav li.home {
+    font-size: 1.5em;
+    color: darkblue;
+    font-weight: bold;
+  }
+
+  nav li.about {
+    background-color: #f0e68c;
+    border-radius: 5px;
+  }
+
+  nav li.contact {
+    font-style: italic;
+    color: darkred;
+  }
+
+  nav li:hover {
+    background-color: #ddd;
+  }
+</style>
+</head>
+<body>
+
+  <div id="div1">lightblue background</div>
+  <div class="div2">lightgreen background</div>
+  <div class="div3">lightcoral background</div>
+
+  <nav>
+    <ul>
+      <li class="home">Home</li>
+      <li class="about">About</li>
+      <li class="contact">Contact</li>
+    </ul>
+  </nav>
+
+</body>
+</html>

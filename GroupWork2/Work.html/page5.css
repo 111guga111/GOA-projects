@@ -1,86 +1,61 @@
-
-.exhibition-detail, .exhibition-detail2 {
-    position: absolute;
-    padding: 120px 5% 100px;
-    left: 32%;
+.pizza, .burger, .sushi, .pasta, .steak, .salad, .cake, .icecream, .taco {
+  position: absolute;
+  font-size: 150%;
+  text-align: center;
+  width: 30%;
+  height: 60%;
 }
 
-.exhibition-header {
-    text-align: center;
-    margin-bottom: 30px;
+.pizza {
+  margin-top: 8%;
+  margin-left: 5%;
 }
 
-.grid {
-    display: grid;
-    gap: 50px;
-    justify-content: center;
-    margin-bottom: 5%;
+.burger {
+  margin-top: 8%;
+  margin-left: 65%;
 }
 
-.items {
-    background-color: #bbc8e0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 0px 20px 3px black;
-    max-width: 500px;
-    height: 500px;
+.sushi {
+  margin-top: 20%;
+  margin-left: 35%;
 }
 
-.items img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+.pasta {
+  margin-top: 44%;
+  margin-left: 5%;
 }
 
-.info {
-    padding: 5%;
+.steak {
+  margin-top: 47%;
+  margin-left: 65%;
 }
 
-.info h3 {
-    color: #202020;
-    margin-bottom: 10px;
+.salad {
+  margin-top: 55%;
+  margin-left: 35%;
 }
 
-.info p {
-    color: #202020;
+.cake {
+  margin-top: 83%;
+  margin-left: 5%;
 }
 
-.meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    padding-top: 1px;
-    border-top: 2px solid #eee;
+.icecream {
+  margin-top: 83%;
+  margin-left: 65%;
 }
 
-.date {
-    color: #e74c3c;
+.taco {
+  margin-top: 100%;
+  margin-left: 37%;
 }
 
-.location {
-    color: #202020;
-}
-
-
-.eng .exhibition-header h2 {
-    font-size: 32px;
-}
-
-.eng .exhibition-header p {
-    font-size: 20px;
-}
-
-.eng .info h3 {
-    font-size: 24px;
-}
-
-.eng .info p {
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0.3px;
-}
-
-.eng .meta span {
-    font-size: 16px;
+.pizza img, .burger img, .sushi img, 
+.pasta img, .steak img, .salad img, .cake img, .icecream img, .taco img {
+  box-shadow: 0px 0px 20px 3px black;
+  height: 300px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-shadow: 1px 1px 3px black;
 }

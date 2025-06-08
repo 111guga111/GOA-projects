@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="page4.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page4.css">
     <link rel="stylesheet" href="Main.css">
-    <title>Cars</title>
+    <title>Document</title>
 </head>
 <body>
     <nav>
         <div class="SWITCH">
             <label for="lang">Switch Language<br>ENG-GEO</label>
-            <input type="checkbox" id="lang" onclick="changeLanguage()" />
+            <input type="checkbox" id="lang" onclick="changeLanguage()">
         </div>
+        <p><span id="line1">=----</span><span id="logo1">6</span><span id="logo2">5</span><span id="line2">----=</span></p>
         <div class="item">
             <div class="language">
                 <a href="page.html">Home</a>
                 <a href="page1.html">Art</a>
-                <a href="page2.html">Food</a>
-                <a href="page3.html">Sculptures</a>
-                <a href="page4.html">Cars</a>
-                <a href="page5.html">Exhibition</a>
+                <a href="page2.html">Sculptures</a>
+                <a href="page3.html">Cars</a>
+                <a href="page4.html">Exhibition</a>
+                <a href="page5.html">buffet</a>
                 <a href="page6.html">About</a>
             </div>
             <div class="language-other">
                 <a href="page.html">მთავარი</a>
                 <a href="page1.html">ხელოვნება</a>
-                <a href="page2.html">საჭმელები</a>
-                <a href="page3.html">ქანდაკებები</a>
-                <a href="page4.html">მანქანები</a>
-                <a href="page5.html">გამოფენა</a>
+                <a href="page2.html">ქანდაკებები</a>
+                <a href="page3.html">მანქანები</a>
+                <a href="page4.html">გამოფენა</a>
+                <a href="page5.html">ბუფეტი</a>
                 <a href="page6.html">შესახებ</a>
             </div>
         </div>
@@ -37,7 +38,7 @@
     </nav>
 
     <div class="members">
-        <p id="team">Team</p>
+        <p id='team'>Team</p>
         <p id="credit">Temuri Mchedlishvili, Mirian Gorelashvili, Guram Topchishvili</p>
     </div>
     <div class="members2">
@@ -46,102 +47,102 @@
     </div>
 
     <div class="eng">
-        <div class="bmw">
-            <img src="BMW_e34.jpg" alt="BMW" />
-            <p id="BMW">Manufacturer BMW</p>
-            <p>The BMW E34 model was produced between 1987 and 1996.</p>
-        </div>
-        <div class="corvette">
-            <img src="Corvette.jpg" alt="Corvette" />
-            <p id="cor">Manufacturer Chevrolet</p>
-            <p>The Corvette is an iconic American sports car, first introduced in 1953.</p>
-        </div>
-        <div class="mercedes">
-            <img src="mercedes_w211.jpg" alt="Mercedes" />
-            <p id="mer">Manufacturer Mercedes-Benz</p>
-            <p>The Mercedes-Benz W211 was produced<br />from 2002 to 2009.</p>
-        </div>
-        <div class="audi">
-            <img src="The Audi A4.jpg" alt="Audi A4" />
-            <p id="audi">Manufacturer Audi</p>
-            <p>The Audi A4 is a line of compact executive cars produced since 1994.</p>
-        </div>
-        <div class="ferrari">
-            <img src="Ferrari F8.jpg" alt="Ferrari F8 Tributo" />
-            <p id="ferrari">Manufacturer Ferrari</p>
-            <p>The Ferrari F8 Tributo was introduced in 2019 as a tribute to V8 engines.</p>
-        </div>
-        <div class="toyota">
-            <img src="The Toyota Supra.jpg" alt="Toyota Supra" />
-            <p id="toyota">Manufacturer Toyota</p>
-            <p>The Toyota Supra is a sports car that debuted in 1978 and remains popular.</p>
-        </div>
-        <div class="porsche">
-            <img src="Porsche 911.jpg" alt="Porsche 911" />
-            <p id="porsche">Manufacturer Porsche</p>
-            <p>The Porsche 911 is a legendary sports car in production since 1964.</p>
-        </div>
-        <div class="tesla">
-            <img src="Tesla Model S.jpg" alt="Tesla Model S" />
-            <p id="tesla">Manufacturer Tesla</p>
-            <p>The Tesla Model S is a fully electric sedan introduced in 2012.</p>
-        </div>
-        <div class="lamborghini">
-            <img src="Aventador.jpg" alt="Lamborghini Aventador" />
-            <p id="lamborghini">Manufacturer Lamborghini</p>
-            <p>The Aventador is a flagship V12 sports car produced since 2011.</p>
-        </div>
+        <main class="exhibition-detail">
+            <div class="exhibition-header">
+                <h2>Current Exhibitions</h2>
+                <p>Explore our current exhibitions and special showcases</p>
+            </div>
+
+            <section class="grid">
+                <div class="items">
+                    <img src="mercedes_w211.jpg">
+                    <div class="info">
+                        <h3>Exotic Cars</h3>
+                        <p>Journey through speed as we explore the thrilling world of exotic cars.</p>
+                        <div class="meta">
+                            <span class="date">Until June 25, 2025</span>
+                            <span class="location">Main Hall</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <img src="Guernica.jpg">
+                    <div class="info">
+                        <h3>Art</h3>
+                        <p>Journey through the evolution of Art, Featuring works from renowned contemporary artists and emerging talents</p>
+                        <div class="meta">
+                            <span class="date">Permanent</span>
+                            <span class="location">2nd Hall</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <img src="Nike of Samothrace.jpg">
+                    <div class="info">
+                        <h3>Sculptures</h3>
+                        <p>Journey through the evolution of Art, Featuring works from renowned contemporary artists and emerging talents</p>
+                        <div class="meta">
+                            <span class="date">July 24th - July 31st</span>
+                            <span class="location">3rd Hall</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
     <div class="geo">
-        <div class="bmw">
-            <img src="BMW_e34.jpg" alt="BMW" />
-            <p id="BMW1">მწარმოებელი BMW</p>
-            <p>BMW E34 მოდელი წარმოებოდა 1987-დან 1996 წლამდე.</p>
-        </div>
-        <div class="corvette">
-            <img src="Corvette.jpg" alt="Corvette" />
-            <p id="cor1">მწარმოებელი შევროლე</p>
-            <p>კორვეტი არის საკულტო ამერიკული სპორტული მანქანა, რომელიც პირველად გამოჩნდა 1953 წელს.</p>
-        </div>
-        <div class="mercedes">
-            <img src="mercedes_w211.jpg" alt="Mercedes" />
-            <p id="mer1">მწარმოებელი მერსედესი</p>
-            <p>მერსედეს-ბენც W211 წარმოდებოდა<br />2002-2009 წლებში.</p>
-        </div>
+        <main class="exhibition-detail2">
+            <div class="exhibition-header">
+                <h2>მიმდინარე გამოფენები</h2>
+                <p>გაიცანით ჩვენი მიმდინარე გამოფენები და სპეციალური შოუები</p>
+            </div>
 
-        <div class="audi">
-            <img src="The Audi A4.jpg" alt="Audi A4" />
-            <p id="audi1">მწარმოებელი აუდი</p>
-            <p>Audi A4 არის კომპაქტური ბიზნეს კლასის მანქანა, წარმოებული 1994 წლიდან.</p>
-        </div>
-        <div class="ferrari">
-            <img src="Ferrari F8.jpg" alt="Ferrari F8 Tributo" />
-            <p id="ferrari1">მწარმოებელი ფერარი</p>
-            <p>Ferrari F8 Tributo შემოვიდა 2019 წელს, როგორც პატივი V8 ძრავებს.</p>
-        </div>
-        <div class="toyota">
-            <img src="The Toyota Supra.jpg" alt="Toyota Supra" />
-            <p id="toyota1">მწარმოებელი ტოიოტა</p>
-            <p>Toyota Supra არის სპორტული მანქანა, რომელიც პირველად გამოვიდა 1978 წელს და დღემდე პოპულარულია.</p>
-        </div>
-        <div class="porsche">
-            <img src="Porsche 911.jpg" alt="Porsche 911" />
-            <p id="porsche1">მწარმოებელი პორშე</p>
-            <p>Porsche 911 არის ლეგენდარული სპორტული მანქანა, რომელიც მზადდება 1964 წლიდან.</p>
-        </div>
-        <div class="tesla">
-            <img src="Tesla Model S.jpg" alt="Tesla Model S" />
-            <p id="tesla1">მწარმოებელი ტესლა</p>
-            <p>Tesla Model S არის სრული ელექტრო სედანი, რომელიც წარმოადგინეს 2012 წელს.</p>
-        </div>
-        <div class="lamborghini">
-            <img src="Aventador.jpg" alt="Lamborghini Aventador" />
-            <p id="lamborghini1">მწარმოებელი ლამბორჯინი</p>
-            <p>Aventador არის ფლაგმანური V12 სპორტული მანქანა, რომელიც მზადდება 2011 წლიდან.</p>
-        </div>
+            <section class="grid">
+                <div class="items">
+                    <img src="mercedes_w211.jpg">
+                    <div class="info">
+                        <h3>ექსკლუზიური მანქანები</h3>
+                        <p>გამოიწვიე სიჩქარე — აღმოაჩინე ექსკლუზიური მანქანების მომაჯადოებელი სამყარო</p>
+                        <div class="meta">
+                            <span class="date">25 ივნისამდე, 2025</span>
+                            <span class="location">მთავარი დარბაზი</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <img src="Guernica.jpg">
+                    <div class="info">
+                        <h3>ხელოვნება</h3>
+                        <p>გაიარეთ ხელოვნების ევოლუციის გზით — თანამედროვე და დამწყები მხატვრების ნამუშევრები</p>
+                        <div class="meta">
+                            <span class="date">მუდმივი</span>
+                            <span class="location">მე-2 დარბაზი</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <img src="Nike of Samothrace.jpg">
+                    <div class="info">
+                        <h3>ქანდაკებები</h3>
+                        <p>გაიარეთ ხელოვნების ევოლუციის გზით — თანამედროვე და დამწყები მხატვრების ნამუშევრები</p>
+                        <div class="meta">
+                            <span class="date">24 ივლისი - 31 ივლისი</span>
+                            <span class="location">მე-3 დარბაზი</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
     <script src="language.js"></script>
 </body>
 </html>
+
+
+

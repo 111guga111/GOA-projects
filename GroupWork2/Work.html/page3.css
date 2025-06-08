@@ -1,5 +1,5 @@
-.Cristo, .Pieta, .Redeemer, .David, .Venus, .Thinker, .Liberty, .Moai, .Nike,
-.Cristo1, .Pieta2, .Redeemer3, .David1, .Venus1, .Thinker1, .Liberty1, .Moai1, .Nike1 {
+.bmw, .corvette, .mercedes, .audi, .ferrari, .toyota, .porsche, .tesla, .lamborghini {
+  
   position: absolute;
   font-size: 150%;
   text-align: center;
@@ -7,44 +7,45 @@
   height: 60%;
 }
 
-.Cristo {
+.bmw {
   margin-top: 8%;
-  margin-left: 2%;
+  margin-left: 5%;
 }
-.Pieta {
+.corvette {
   margin-top: 8%;
-  margin-left: 68%;
+  margin-left: 65%;
 }
-.Redeemer {
+.mercedes {
   margin-top: 20%;
   margin-left: 35%;
 }
-.David {
+.audi {
   margin-top: 44%;
   margin-left: 5%;
 }
-.Venus {
+.ferrari {
   margin-top: 44%;
   margin-left: 65%;
 }
-.Thinker {
+.toyota {
   margin-top: 59%;
   margin-left: 35%;
 }
-.Liberty {
-  margin-top: 75%;
+.porsche {
+  margin-top: 80%;
   margin-left: 5%;
 }
-.Moai {
+.tesla {
   margin-top: 80%;
   margin-left: 65%;
 }
-.Nike {
+.lamborghini {
   margin-top: 100%;
   margin-left: 35%;
 }
-.Cristo img, .Pieta img, .Redeemer img, .David img, .Venus img, .Thinker img, .Liberty img, .Moai img, .Nike img,
-.Cristo1 img, .Pieta2 img, .Redeemer3 img, .David1 img, .Venus1 img, .Thinker1 img, .Liberty1 img, .Moai1 img, .Nike1 img {
+
+
+.bmw img, .corvette img, .mercedes img, .audi img, .ferrari img, .toyota img, .porsche img, .tesla img, .lamborghini img {
   box-shadow: 0px 0px 20px 3px black;
   height: 300px;
   margin-top: 1%;
@@ -52,12 +53,17 @@
   text-shadow: 1px 1px 3px black;
 }
 
-#CDM, #MM, #PL, #DM, #VM, #TR, #SB, #MO, #NS,
-#CDM-GEO, #MM-GEO, #PL-GEO, #DM-GEO, #VM-GEO, #TR-GEO, #SB-GEO, #MO-GEO, #NS-GEO {
+
+#BMW, #cor, #mer, #audi, #ferrari, #toyota, #porsche, #tesla, #lamborghini,
+#BMW1, #cor1, #mer1, #audi1, #ferrari1, #toyota1, #porsche1, #tesla1, #lamborghini1 {
   text-shadow: 1px 1px 3px black;
   margin-top: 1%;
   margin-bottom: 1%;
 }
+
+
+
+
 
 
 
