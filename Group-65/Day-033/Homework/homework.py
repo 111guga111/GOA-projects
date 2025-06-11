@@ -1,10 +1,15 @@
 #1
 num=[1,2,5,6,"good","4",4,2]
-def ManualSplit(lst,a):
-    result=[]
+def ManualSplit(lst, a):
+    result = []
+    current = []
     for i in lst:
-        if i!=a:
-            result.append(i)
+        if i == a:
+            result.append(current)
+            current = []
+        else:
+            current.append(i)
+    result.append(current) 
     return result
 print(ManualSplit(num,2))
 
