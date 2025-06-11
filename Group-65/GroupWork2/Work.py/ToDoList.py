@@ -7,9 +7,9 @@ mark="0"
 undo = []
 save = ToDoList.copy()
 
-while menu in com :
+while menu!="l" :
     if Task =="0" and remo =="0" and mark =="0":
-        menu=input("""(0=Edit list)  (9=Clear last task)  (8=Clear all) (7=undo) (6=Save) (5=Load) (4=Remove) (3=Mark) (2=Paste) (1=info) (Anything else=stop): """)
+        menu=input("""(0=Edit list)  (9=Clear last task)  (8=Clear all) (7=undo) (6=Save) (5=Load) (4=Remove) (3=Mark) (2=Paste) (1=info) (l=Leave) (Anything else=stop): """)
 
     if menu=="9":
         undo.append(ToDoList.copy())
@@ -45,15 +45,20 @@ while menu in com :
                 remo=input("your to do list is empty please go back to menu and fill it in order to use this function  (0=Menu):  ")
 
     if menu == "3":
+        
         if ToDoList == [] and mark!="0":
                 mark = input("Your to do list is empty, please go back to menu and add tasks first (0=Menu): ")
+        
         if ToDoList != []:
-            undo.append(ToDoList.copy())
             mark = input("(0=Menu) mark in your list: ")
+
             while not mark.isdigit() or int(mark) > len(ToDoList):
                 mark = input("(0=Menu) invalid input, please go back to Menu: ")
-            if mark.isdigit() and int(mark) <= len(ToDoList):
+
+            if mark.isdigit() and int(mark) <= len(ToDoList) and mark!="0":
+                undo.append(ToDoList.copy())
                 ToDoList[int(mark) - 1] += " ✅"
+
     if menu == "2":
         undo.append(ToDoList.copy())
         for i in save:
@@ -108,5 +113,7 @@ while menu in com :
             undo.append(ToDoList.copy())
             when=input("""time: """).lower()
             ToDoList.append(f"  {Task}---{when}")
+    if menu not in com:
+        print("command you entered doesnt exist")
 
     print(f"""Your to do List  {ToDoList}""")
