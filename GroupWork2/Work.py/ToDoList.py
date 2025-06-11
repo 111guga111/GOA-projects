@@ -1,5 +1,5 @@
 ToDoList=[]
-com=["0","9","8","7","6","5","4","3","2"]
+com=["0","9","8","7","6","5","4","3","2","1"]
 Task="0"
 menu="0"
 remo="0"
@@ -9,7 +9,7 @@ save = ToDoList.copy()
 
 while menu in com :
     if Task =="0" and remo =="0" and mark =="0":
-        menu=input("""(0=Edit list)  (9=Clear last task)  (8=Clear all) (7=undo) (6=Save) (5=Load) (4=Remove) (3=Mark) (2=Paste) (Anything else=stop): """)
+        menu=input("""(0=Edit list)  (9=Clear last task)  (8=Clear all) (7=undo) (6=Save) (5=Load) (4=Remove) (3=Mark) (2=Paste) (1=info) (Anything else=stop): """)
 
     if menu=="9":
         undo.append(ToDoList.copy())
@@ -58,6 +58,49 @@ while menu in com :
         undo.append(ToDoList.copy())
         for i in save:
             ToDoList.append(i)
+    
+    if menu == "1":
+        print("""
+            How to use ToDo List:
+
+            (0) Edit list:
+                - Add a new task by typing it in and specifying a time.
+
+            (1) Info:
+                - Shows this help message.
+
+            (2) Paste:
+                - Paste tasks from the saved version of your list.
+
+            (3) Mark:
+                - Mark a task as completed with a ✅ symbol.
+
+            (4) Remove:
+                - Remove a specific task from the list by its number.
+
+            (5) Load:
+                - Load the last saved version of your list.
+
+            (6) Save:
+                - Save the current version of your list.
+
+            (7) Undo:
+                - Undo the last change to your list.
+
+            (8) Clear all:
+                - Remove all tasks from your list.
+
+            (9) Clear last task:
+                - Remove the most recent task you added.
+
+            (Anything else) Exit:
+                - Stop and close the ToDo list app.
+
+            Notes:
+            - Task numbers start from 1 when removing or marking.
+            - All actions (except viewing info) are undoable using option (7).
+            - Your list is always shown after every operation.
+            """)
 
     if menu=="0":
         Task=input("""(0=Menu) what task do you want to add to your list?: """)
