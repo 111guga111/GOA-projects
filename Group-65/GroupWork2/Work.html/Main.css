@@ -24,8 +24,8 @@ a {
   color: black;
 }
 a:hover {
-  color: #DEE2FF;
-  text-shadow: 1px 1px 15px #DEE2FF;
+  color: rgb(51, 255, 0);
+  text-shadow: 1px 1px 15px rgb(51, 255, 0);
 }
 
 ul {
@@ -78,8 +78,8 @@ nav p{
   display: none;
 }
 .SWITCH:hover {
-  color: #DEE2FF;
-  text-shadow: 1px 1px 3px #DEE2FF;
+  color: rgb(51, 255, 0);
+  text-shadow: 1px 1px 3px rgb(51, 255, 0);
 }
 
 #team, #credit {
