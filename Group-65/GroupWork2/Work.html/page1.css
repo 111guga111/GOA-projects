@@ -2,8 +2,6 @@
   position: absolute;
   font-size: 150%;
   text-align: center;
-  width: 30%;
-  height:60%;
 }
 
 .Monalisa {
@@ -18,7 +16,7 @@
 
 .starry {
   margin-top: 20%;
-  margin-left: 35%;
+  margin-left: 38%;
 }
 
 .persistence {
@@ -26,24 +24,24 @@
   margin-left: 5%;
 }
 .pearl {
-  margin-top: 47%;
+  margin-top: 45%;
   margin-left: 65%;
 }
 .scream {
   margin-top: 55%;
-  margin-left: 35%;
+  margin-left: 38%;
 }
 .guernica {
   margin-top: 83%;
   margin-left: 5%;
 }
 .venus {
-  margin-top: 83%;
+  margin-top: 80%;
   margin-left: 65%;
 }
 .gothic {
   margin-top: 100%;
-  margin-left: 37%;
+  margin-left: 47%;
 }
 
 .Monalisa img, .last img, .starry img, 
@@ -57,11 +55,13 @@
   text-shadow: 1px 1px 3px black;
   margin-top: 1%;
   margin-bottom: 1%;
+  border: solid;
 }
 
 #dali, #vermeer, #munch, #picasso, #botticelli, #wood,
 #dali1, #vermeer1, #munch1, #picasso1, #botticelli1, #wood1,
 #LD, #LD1, #leo, #leo1, #van, #van1 {
+  position: absolute;
   text-shadow: 1px 1px 3px black;
   margin-top: 1%;
   margin-bottom: 1%;

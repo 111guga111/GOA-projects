@@ -5,6 +5,9 @@ body {
   font-style: oblique;
   overflow-y: scroll;
 }
+body, html {
+  height: 160%;
+}
 
 .language, .language-other {
   display: inline-flex;
@@ -24,7 +27,7 @@ a {
   color: black;
 }
 a:hover {
-  color: rgb(51, 255, 0);
+  color: rgb(32, 159, 0);
   text-shadow: 1px 1px 15px rgb(51, 255, 0);
 }
 
@@ -33,21 +36,21 @@ ul {
 }
 nav {
   font-weight:bold;
-  padding:25px 0px;
+  padding:10px;
   position: fixed;
   z-index: 2;
-  top: 0;
+  top:0;
   left: 0;
   right: 0;
-  background-color: #759aeb;
+  background-color: rgb(200, 203, 205);
   text-align: center;
-  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.35) inset;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.35);
 }
 nav p{
   position: absolute;
   font-size:70px;
   left:1%;
-  top:-75%;
+  top:-138.5%;
 }
 .members, .members2 {
   font-weight:500;
@@ -56,29 +59,32 @@ nav p{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #759eeb;
+  background-color: rgb(200, 203, 205);
   text-align: center;
-  text-shadow: 1px 1px 3px black;
-  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.35) inset;
+  text-shadow: 1px 1px 10px black;
+  box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.35);
 }
 .members {
-  font-size: 20.7px;
+  font-size: 18px;
 }
 .members2 {
-  font-size: 20px;
+  font-size: 17.3px;
 }
 
 .SWITCH {
   position: absolute;
-  font-size: 20px;
+  font-size: 30px;
   right:2%;
-  top:25%;
+  top:10%;
+}
+#english{
+  font-size:38px;
 }
 .SWITCH input {
   display: none;
 }
 .SWITCH:hover {
-  color: rgb(51, 255, 0);
+  color: rgb(35, 177, 0);
   text-shadow: 1px 1px 3px rgb(51, 255, 0);
 }
 
@@ -86,7 +92,7 @@ nav p{
   text-align: center;
 }
 #logo1{
-  color: rgb(51, 255, 0);
+  color: rgb(44, 219, 0);
 }
 #logo2{
   color: rgb(0, 0, 0);
@@ -95,5 +101,14 @@ nav p{
   color: rgb(0, 0, 0);
 }
 #line2{
-  color: rgb(51, 255, 0);
+  color: rgb(44, 219, 0);
+}
+#back{
+  background-repeat: no-repeat;
+  position:fixed;
+  left:0;
+  height:100vh;
+  width:100vw;
+  z-index:-1;
+  opacity:0.5;
 }

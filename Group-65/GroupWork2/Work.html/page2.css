@@ -3,8 +3,6 @@
   position: absolute;
   font-size: 150%;
   text-align: center;
-  width: 30%;
-  height: 60%;
 }
 
 .Cristo {
@@ -13,23 +11,23 @@
 }
 .Pieta {
   margin-top: 8%;
-  margin-left: 68%;
+  margin-left: 75%;
 }
 .Redeemer {
   margin-top: 20%;
-  margin-left: 35%;
+  margin-left: 33%;
 }
 .David {
   margin-top: 44%;
-  margin-left: 5%;
+  margin-left: 13%;
 }
 .Venus {
   margin-top: 44%;
-  margin-left: 65%;
+  margin-left: 75%;
 }
 .Thinker {
   margin-top: 59%;
-  margin-left: 35%;
+  margin-left: 42%;
 }
 .Liberty {
   margin-top: 75%;
@@ -37,11 +35,11 @@
 }
 .Moai {
   margin-top: 80%;
-  margin-left: 65%;
+  margin-left: 76%;
 }
 .Nike {
   margin-top: 100%;
-  margin-left: 35%;
+  margin-left: 37%;
 }
 .Cristo img, .Pieta img, .Redeemer img, .David img, .Venus img, .Thinker img, .Liberty img, .Moai img, .Nike img,
 .Cristo1 img, .Pieta2 img, .Redeemer3 img, .David1 img, .Venus1 img, .Thinker1 img, .Liberty1 img, .Moai1 img, .Nike1 img {
@@ -50,10 +48,12 @@
   margin-top: 1%;
   margin-bottom: 1%;
   text-shadow: 1px 1px 3px black;
+  border: solid;
 }
 
 #CDM, #MM, #PL, #DM, #VM, #TR, #SB, #MO, #NS,
 #CDM-GEO, #MM-GEO, #PL-GEO, #DM-GEO, #VM-GEO, #TR-GEO, #SB-GEO, #MO-GEO, #NS-GEO {
+  position: absolute;
   text-shadow: 1px 1px 3px black;
   margin-top: 1%;
   margin-bottom: 1%;
