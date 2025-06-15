@@ -1,5 +1,5 @@
 ToDoList=[]
-com=["0","9","8","7","6","5","4","3","2","1"]
+com=["0","9","8","7","6","5","4","3","2","1","l"]
 Task="0"
 menu="0"
 remo="0"
@@ -9,7 +9,7 @@ save = ToDoList.copy()
 
 while menu!="l" :
     if Task =="0" and remo =="0" and mark =="0":
-        menu=input("""(0=Edit list)  (9=Clear last task)  (8=Clear all) (7=undo) (6=Save) (5=Load) (4=Remove) (3=Mark) (2=Paste) (1=info) (l=Leave) (Anything else=stop): """)
+        menu=input("""(0=Edit list)  (9=Clear last task)  (8=Clear all) (7=undo) (6=Save) (5=Load) (4=Remove) (3=Mark) (2=Paste) (1=info) (l=Leave): """)
 
     if menu=="9":
         undo.append(ToDoList.copy())
