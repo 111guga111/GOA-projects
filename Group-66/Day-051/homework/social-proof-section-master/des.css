@@ -1,0 +1,109 @@
+body{
+    Font-size: 15px;
+}
+main{
+    position: relative;
+    justify-content: center;
+    margin-top: 160px;
+}
+#titl{
+    width: 400px;
+    font-size: 60px;
+    margin: 100px auto auto 350px;
+    line-height: 0.9;
+    color: hsl(300, 43%, 22%);
+}
+#text{
+    margin: 25px auto auto 350px;
+    grid-column:1;
+    grid-row:11;
+    width: 600px;
+    font-size: 20px;
+    color: hsl(303, 10%, 53%);
+}
+#stars{
+    justify-content: center;
+    position: absolute;
+    height: 20px;
+    right: 350px;
+    top: 40px;
+}
+#Reviews, #Guru, #BestTech{
+    width: 510px;
+    height: 55px;
+    color:hsl(300, 43%, 22%);
+    background-color: hsl(300, 24%, 96%);
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    font-weight:bold;
+}
+#Reviews img, #Reviews p,#Guru img, #Guru p,#BestTech img, #BestTech p{
+    position: relative;
+    right:30px;
+}
+#Guru{
+    left: 40px;
+}
+#BestTech{
+    left:80px;
+}
+.star{
+    display: flex;
+    gap: 10px;
+}
+#profile,#profile1,#profile2{
+    font-size: 19px;
+    color:hsl(0, 0%, 100%);
+    justify-content: center;
+    text-align: left;
+    padding: 40px 30px;
+    border-radius: 10px;
+    width:345px;
+    height: 170px;
+    background-color:hsl(300, 43%, 22%) ;
+}
+#profile1{
+    position: relative;
+    top:20px;
+}
+#profile2{
+    position: relative;
+    top:40px;
+}
+#prof1, #prof2, #prof3{
+    height: 50px;
+    display: flex;
+    gap: 30px;
+    padding-bottom: 25px;
+}
+
+.ver{
+    color:hsl(333, 80%, 67%);
+}
+.font{
+    position: relative;
+    bottom: 16px;
+}
+#all img{
+    width: 50px;
+    border-radius: 50%;
+}
+#all{
+    position: absolute;
+    top: 275px;
+    left: 350px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap:30px;
+}
+.attribution{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-left: 50vw;
+    bottom:0;
+}
