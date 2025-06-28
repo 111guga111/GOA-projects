@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+            margin-top: 45vh;
+            margin-left: 1vw;
+        }
+        button{
+            border-radius: 30px;
+            background-color: rgb(95, 15, 15);
+            color: rgb(255, 0, 0);
+            font-size: 30px;
+            width:200px;
+            height:100px;
+        }
+        button:hover{
+            background-color: rgb(138, 0, 0);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="Number()">Secret</button>
+    <script>
+        function Number() {
+        const number = parseInt(prompt('Please enter a number below 10'));
+
+        if (number > 5) {
+            alert(number + " is too high");
+        } else if (number < 5) {
+            alert(number + " is too low");
+        } else {
+            alert("Correct!");
+        }
+        }
+    </script>
+</body>
+</html>
