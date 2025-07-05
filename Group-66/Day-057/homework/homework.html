@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #head{
+            font-size: 100px;
+            height: 100px;
+        }
+        #button{
+            cursor: pointer;
+            width: 150px;
+            font-size: 50px;
+            margin-top: 200px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1 id="head"></h1>
+    <button id="button">Click!</button>
+    <script>
+        const button = document.getElementById("button")
+        let head = document.getElementById("head")
+        function show(){
+            head.textContent = "Hello World!!!"
+        }
+        button.addEventListener("click",show)
+    </script>
 </body>
 </html>
