@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const score = prompt("Enter your score");
+        switch (true) {
+        case (score < 0 || score > 100):
+            alert("Invalid Score");
+            break;
+        case (score === 100):
+            alert("A+");
+            break;
+        case (score >= 90):
+            alert("A");
+            break;
+        case (score >= 80):
+            alert("B");
+            break;
+        case (score >= 70):
+            alert("C");
+            break;
+        case (score >= 60):
+            alert("D");
+            break;
+        case (score >= 40):
+            alert("E");
+            break;
+        default:
+            alert("F");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heads or Tails</title>
+</head>
+<body>
+  <button id="heads">Heads</button>
+  <button id="tails">Tails</button>
+  <p id="result"></p>
+
+  <script>
+    const headsButton = document.getElementById("heads");
+    const tailsButton = document.getElementById("tails");
+
+    const resultParagraph = document.getElementById("result");
+
+    headsButton.addEventListener("click", function() {
+      resultParagraph.textContent = "heads";
+    });
+
+    tailsButton.addEventListener("click", function() {
+      resultParagraph.textContent = "tails";
+    });
+  </script>
+</body>
+</html>

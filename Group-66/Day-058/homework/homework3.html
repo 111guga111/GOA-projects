@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const role = prompt("Enter your role (admin, moderator, user):");
+        switch(role) {
+            case "admin":
+                alert("You Have Full Access");
+                break;
+            case "moderator":
+                alert("You Can Manage The Content");
+                break;
+            case "user":
+                alert("You Can View The Content");
+                break;
+            default:
+                alert("Access Denied or Invalid Role");
+        }
+    </script>
+</body>
+</html>

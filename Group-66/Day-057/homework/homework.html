@@ -28,10 +28,9 @@
     <script>
         const button = document.getElementById("button")
         let head = document.getElementById("head")
-        function show(){
+        button.addEventListener("click",()=>{
             head.textContent = "Hello World!!!"
-        }
-        button.addEventListener("click",show)
+        })
     </script>
 </body>
 </html>
