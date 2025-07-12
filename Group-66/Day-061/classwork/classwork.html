@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">button</button>
+    <div id="result"></div>
+
+    <script>
+        const button = document.getElementById("button");
+        const result = document.getElementById("result");
+
+        button.addEventListener("click", () => {
+            const num = parseInt(prompt("Enter first number:"));
+            const num1 = parseInt(prompt("Enter second number:"));
+
+            const sum = num + num1;
+            const type = num % 2 === 0 ? "even" : "odd";
+            const type1 = num1 % 2 === 0 ? "even" : "odd";
+
+            result.innerHTML = `
+                <p>sum = ${sum}</p>
+                <p>${num} - ${type}</p>
+                <p>${num1} - ${type1}</p>
+            `;
+        });
+    </script>
+</body>
+</html>

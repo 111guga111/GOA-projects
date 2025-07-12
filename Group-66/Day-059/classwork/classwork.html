@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //hosting is when javascript reads the code first, no metter where is it written. for example:
+        //1
+        greet();
+        function greet() {
+            console.log("Hello World!");
+        }
+        //2
+        console.log(num);
+        var num = 10;
+         
+        /*this is a problem because we can make mistakes and not know where is it, because error will not show,
+        to fix this, we have to use const or let deppending what we want to achive. "const" creates constant,
+        so whatever meaning we give it, will stay the same and wont be able to change it afterwards.
+        "let" doeses same thing, but we have ability to change the meaning afterwards.
+        const/let doesnt have hosting, meaning, its out way to fix hosting. for example: */
+        let number = 5;
+        console.log(number);
+
+        //Function Expression is when we give function an name but using let or const. this is out way to fix hosting on functions, for example:
+        const hi = function() {
+            console.log("hi");
+        };
+
+        //function declaration is when we create function without using const or let, so it will have hosting. for example:
+        function hello(){
+            console.log("hello");
+        };
+    </script>
+</body>
+</html>

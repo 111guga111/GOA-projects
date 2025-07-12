@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">!!!Increase!!!</button>
+    <p>Count: <span id="Count">0</span></p>
+    <script>
+        let count = document.getElementById("Count")
+        let button = document.getElementById("button")
+        let number = 0
+
+        button.addEventListener("click", function(){
+            number++
+            count.textContent = number
+        })
+    </script>
+</body>
+</html>

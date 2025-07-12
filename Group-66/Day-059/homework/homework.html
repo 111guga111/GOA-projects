@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paragraph Styling</title>
+</head>
+<body>
+
+  <p id="section">Hello</p>
+
+  <button id="changeColor">Change Background Color</button>
+  <button id="changeFontColor">Change Text Color</button>
+  <button id="changeFont">Change Font Size</button>
+
+  <script>
+    let color = document.getElementById("changeColor")
+    let fontColor = document.getElementById("changeFontColor")
+    let font = document.getElementById("changeFont")
+    let section = document.getElementById("section")
+
+    color.addEventListener("click", function() {
+        section.style.backgroundColor = "blue"
+    })
+
+    fontColor.addEventListener("click", function() {
+        section.style.color = "purple"
+    })
+
+    font.addEventListener("click", function() {
+        section.style.fontSize = "30px"
+    })
+  </script>
+
+</body>
+</html>

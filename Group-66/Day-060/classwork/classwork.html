@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Hello">Hello</p>
+    <p class="HelloEveryone">Hello Family</p>
+    <p class="HelloEveryone">Hello Friends</p>
+    <script>
+        //it takes elements based on id names
+        const Hello = document.getElementById("Hello")
+
+        //it takes elements based on class names
+        const HelloEveryone = document.getElementsByClassName("HelloEveryone")
+
+        //it takes elements based on tag names
+        const Everything = document.getElementsByTagName("p")
+
+        /*textContent gives us only text without tags, theres no meaning if we say <strong>my name is guga</strong>.
+         but innerHTML fixes that problem. it gives us with tags and if we try to change the content with innerHTML,
+         with <strong>my name is guga</strong>, tags do have meaning and text will be strong */
+        Hello.innerHTML += "<em>My name is guga</em> <b>I live in Georgia</b> <u>My hobby is MMA</u>"
+    </script>
+</body>
+</html>

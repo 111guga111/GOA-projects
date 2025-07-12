@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buttons Example</title>
+</head>
+<body>
+
+  <button id="change">Change Text Content</button>
+  <button id="add">Add innerHTML</button>
+
+  <div id="div">Hello!</div>
+
+  <script>
+    const change = document.getElementById("change");
+    const add = document.getElementById("add");
+    const div = document.getElementById("div");
+
+    change.addEventListener("click", function() {
+      div.textContent = "My name is Guga!!!";
+    });
+
+    add.addEventListener("click", () => {
+      div.innerHTML += `
+        <p><b>i am 17 years old</b></p>
+        <p><strong>i love programming</strong></p>
+        <p><i>this information about me</i></p>`;
+    });
+  </script>
+
+</body>
+</html>

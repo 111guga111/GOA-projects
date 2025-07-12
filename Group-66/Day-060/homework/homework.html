@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lst = ["watermelon", "pier", "apple", "orange", "banana"];
+        //appends it bottom of the list and returns its length 
+        let pushedArray = lst.push("kiwi");
+        // it deletes last item and returns it 
+        let removedElement = lst.pop()
+        // (start:end)
+        let slicedArray = lst.slice(0,4)
+        // (start:deleteCount:add)
+        let splicedArray = lst.splice(3,0, "dragonfruit")
+        //deletes first iteam and returns it
+        let shiftedArray = lst.shift()
+        //adds it to the start of the list and returns its length
+        let unshiftedArray = lst.unshift("strawberries")
+        // gives us the index of given item, if item isnt in list, it gives us -1
+        let IndexOfArray = lst.indexOf("apple")
+    </script>
+</body>
+</html>

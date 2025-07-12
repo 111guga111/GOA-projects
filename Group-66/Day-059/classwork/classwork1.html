@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document მაგალითი</title>
+  <style>
+    .greet {
+      font-size: 20px;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <p id="pTag">Hello!</p>
+
+  <script>
+    //document is webpage skeleton, we use it for javascript to manipulate it  
+    const pTag = document.getElementById("pTag");
+    pTag.textContent = "Hello! world!";
+    pTag.style.backgroundColor = "blue";
+    pTag.id = "world";
+    pTag.className = "greet";
+  </script>
+
+</body>
+</html>
