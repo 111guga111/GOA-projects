@@ -7,10 +7,14 @@
 </head>
 <body>
     <script>
-        let lst = [1, 2, 3, 4, 5];
+        let lst = ["apple", "cherry", "strawberry", "apple", "orange"];
+        let all = 0
         for (let i = 0 ; i < lst.length ; i++ ){
-            console.log(lst[i])
+            if(lst[i] === "apple"){
+                all += 1
+            }
         }
-    </script>
+        console.log(all)
+    </script>  
 </body>
 </html>
