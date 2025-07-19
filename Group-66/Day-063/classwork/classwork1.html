@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const func = function(sentence){
+            let count = 0
+            for(let i = 0; i < sentence.length; i++ ){
+                if(sentence[i] === " "){
+                    count++
+                }
+            }
+            return count;
+        }
+        console.log(func("hello world"))
+    </script>
+</body>
+</html>

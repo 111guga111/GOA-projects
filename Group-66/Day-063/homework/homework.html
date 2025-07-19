@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const check = (word, array) => {
+            if (!array.includes(word)){
+                array.push(word);
+            }
+            return array;
+        };
+
+        const average = array => {
+            let result= 0
+            for (let i = 0; i<array.length; i++){
+                result+=array[i]
+            }
+            return result/array.length
+        }
+
+        const pass = password => {
+            let string = 0
+            let number = 0
+            for (let i = 0 ; i<password.length; i++ ){
+                if (isNaN(password[i])) {
+                    string++;
+                } else {
+                    number++;
+                }
+            }
+            return (string > 0 && number > 0 && password.length >= 6) ? 
+            'Password Is strong': 'The Password Must Contain numbers and letters and it should be at least 6 characters long'
+        }
+    </script>
+</body>
+</html>
