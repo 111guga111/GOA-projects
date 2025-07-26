@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //higher order function is when a function takes onether function in his code block
+        //functions are one of the data type, they are stored in heap and there name is stored in stack
+        function greet() {
+            console.log(10*10);
+        }
+        const higherOrderFunction = (a)=>{
+            return a()
+        }
+        higherOrderFunction(greet);
+
+        function Hello() {
+            return "Hello";
+        }
+        const highFunc = ()=>{
+            return ()=>{
+                return Hello()
+            };
+        }     
+        console.log(highFunc)
+    </script>
+</body>
+</html>

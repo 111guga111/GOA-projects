@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const lst =[1,2,3,4,5]
+        lst.forEach((name) => console.log(name))
+
+        //forEach runs over every element in list
+        //callback is the function you give to forEach that runs code on each element
+        //Abstraction hides the behind function
+        const manualForEach = (arr,cb) => {
+            for (let i = 0; i < arr.length; i++) {
+                cb(arr[i]);
+            }
+        }
+        
+    </script>
+</body>
+</html>

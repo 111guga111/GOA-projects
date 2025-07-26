@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //callback function is when we give a function as a parameter to a higher order function
+
+        console.log("Start"); //this will be first output
+
+        setTimeout(function () {console.log("Inside setTimeout");}, 2000); /*
+        this will be the last output, even though JavaScript puts functions at the top. 
+        This happens because setTimeout delays the function by 2 seconds before running it. */
+
+        console.log("End") // then this will be second output
+
+        let array = [1,2,3,4,5]
+        let filteredArray = array.filter(num => num % 2 == 0)
+        console.log(filteredArray)
+
+        // .filter() returns elements that fit the condition
+        // .map() returns changed elements
+    </script>
+</body>
+</html>

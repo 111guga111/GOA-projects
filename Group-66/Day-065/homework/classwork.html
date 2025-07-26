@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lst = [1,2,3,4,5]
+        lst.forEach( a => console.log(a));
+
+        let names = ["guga", "tazo", "demetre"]
+        names.forEach( name => console.log(name));
+
+        lst.forEach(a => a%2===0? console.log(a + ":even"):console.log(a + ":odd"));
+
+        names.forEach (word => console.log(word.length));
+
+        names.forEach (word => console.log(word.split("").reverse().join()));
+
+        lst.map(num => console.log(num*2));
+
+        names.map(name => console.log(name.toUpperCase()));
+
+        names.map(name => console.log(name[0]));
+
+        lst.map(num => console.log(num+5));
+
+        names.map(name => console.log(name[name.length-1]));
+
+        const manualForEach = (arr,cb) => {
+            for (let i = 0; i < arr.length; i++) {
+                cb(arr[i]);
+            }
+        }
+
+        const manualmap = (arr,cb) => {
+            let Array=[]
+            for (let i = 0; i < arr.length; i++) {
+                Array.push(cb(arr[i]));
+            }
+            return Array
+        }
+        //.map() returns value and .forEach() doesnt. 
+    </script>
+</body>
+</html>

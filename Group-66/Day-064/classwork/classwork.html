@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this causes error because the variable count isnt on global scope
+        function number(){
+            let count = 5
+            console.log(count)
+        }
+        // error is here
+        console.log(count)
+
+        //this is how to fix it, we create variable outside the code block, so it makes it global, witch means it can be reached from anywhere
+        let count = 5
+        function number(){
+            console.log(count)
+        }
+        console.log(count)
+
+        //global scope is when we could reac hthe variabel from anywhere, local scope can only be reached inside the code block
+    </script>
+</body>
+</html>

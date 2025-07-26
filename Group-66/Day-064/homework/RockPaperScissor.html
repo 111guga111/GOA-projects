@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        html, body {
+            height: 96%;
+        }
+        body{
+            margin:0;
+            padding:0;
+            background-image:url(photos/background.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Space Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #result{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-top: 6%;
+            font-size: 75px;
+            margin-bottom:5%;
+            font-weight: bold;
+        }
+        #vs{
+            font-size: 60px;
+            font-weight: bold;
+        }
+        #player img{
+            width: 350px;
+            height: 300px;
+            border: 5px solid black;
+            box-shadow: 0 0 50px 15px black;
+            background-color: rgb(101, 168, 255);
+            padding: 20px;
+        }
+        #Bot img{
+            width: 350px;
+            height: 300px;
+            border: 5px solid black;
+            box-shadow: 0 0 50px 15px black;
+            background-color: rgb(255, 122, 122);
+            padding: 20px;
+        }
+        #answers{
+            margin-top: 0;
+            display: flex;
+            gap: 5rem;
+            justify-content: center;
+            text-align: center;
+        }
+        #buttons{
+            margin-top: 4%;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+        #Paper,#Scissor,#Rock{
+            background-color:rgb(220, 237, 255);
+            box-shadow: 0 0 10px 0 black;
+            border-radius: 50px;
+            padding: 10px;
+            font-size: 30px;
+        }
+        #Paper:hover,#Scissor:hover,#Rock:hover{
+            cursor: pointer;
+            background-color:rgb(159, 171, 186);
+            transition: 0.5s;
+        }
+        #you{
+            position: absolute;
+            border: 5px solid black;
+            border-radius: 30px;
+            background-color: rgb(220, 237, 255);
+            padding: 10px;
+            color: rgb(0, 0, 255);
+            margin-left: 20%;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        #bot{
+            border: 5px solid black;
+            border-radius: 30px;
+            background-color: rgb(220, 237, 255);
+            padding: 10px;
+            position: absolute;
+            color: rgb(255, 0, 0);
+            margin-left: 73%;
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="you">You: <span id="Pscore">0</span></p>
+    <p id="bot">Bot: <span id="Bscore">0</span></p>
+    <div id="buttons">
+        <button id="Paper">Paper!</button>
+        <button id="Scissor">Scissor!</button>
+        <button id="Rock">Rock!</button>
+    </div>
+    <p id="result">Make a choice!</p>
+    <div id="answers">
+        <div id="player">
+            <img id="IPaper" src="photos/paper.png">
+            <img id="IScissor" src="photos/scissor.png">
+            <img id="IRock" src="photos/rock.png">
+        </div>
+        <p id="vs">VS</p>
+        <div id="Bot">
+            <img id="BIPaper" src="photos/paper.png">
+            <img id="BIScissor" src="photos/scissor.png">
+            <img id="BIRock" src="photos/rock.png">
+        </div>
+    </div>
+    <script>
+        let result = document.getElementById("result");
+
+        let paper = document.getElementById("Paper");
+        let scissor = document.getElementById("Scissor");
+        let rock = document.getElementById("Rock");
+
+        let Ipaper = document.getElementById("IPaper");
+        let Iscissor = document.getElementById("IScissor");
+        let Irock = document.getElementById("IRock");
+
+        let BIpaper = document.getElementById("BIPaper");
+        let BIscissor = document.getElementById("BIScissor");
+        let BIrock = document.getElementById("BIRock");
+
+        let Pscore = document.getElementById("Pscore")
+        let Bscore = document.getElementById("Bscore")
+
+        Ipaper.style.display = "none";
+        Iscissor.style.display = "none";
+        Irock.style.display = "none";
+
+        BIpaper.style.display = "none";
+        BIscissor.style.display = "none";
+        BIrock.style.display = "none";
+
+        let final = ""
+        let botChoice = "";
+        let choice = ""
+        let bot = ()=>{
+            let choices = ["Paper","Scissor","Rock"];
+            let random = Math.floor(Math.random() * 3);
+            botChoice = choices[random]
+            if(botChoice=="Paper"){
+                BIpaper.style.display = "flex";
+                BIscissor.style.display = "none";
+                BIrock.style.display = "none";
+            }
+            else if (botChoice=="Scissor"){
+                BIpaper.style.display = "none";
+                BIscissor.style.display = "flex";
+                BIrock.style.display = "none";   
+            }
+            else{
+                BIpaper.style.display = "none";
+                BIscissor.style.display = "none";
+                BIrock.style.display = "flex";      
+            }
+        };
+        let system = ()=>{
+            if (choice === botChoice) {
+                final = "Draw!";
+                result.textContent = final;
+                result.style.color = "rgb(50, 50, 50)"
+            } else if ((choice === "Rock" && botChoice === "Scissor") || (choice === "Scissor" && botChoice === "Paper") ||(choice === "Paper" && botChoice === "Rock")){
+                final = "Win!";
+                result.textContent = final;
+                Pscore.textContent = parseInt(Pscore.textContent) + 1;
+                result.style.color = "rgb(0, 0, 255)";
+            } else {
+                final = "Lose!";
+                result.textContent = final;
+                Bscore.textContent = parseInt(Bscore.textContent) + 1;
+                result.style.color = "rgb(255, 0, 0)";
+            };
+        }
+
+        paper.addEventListener("click", () => {
+            choice="Paper"
+            bot();
+            system();
+            Ipaper.style.display = "flex";
+            Iscissor.style.display = "none";
+            Irock.style.display = "none";
+
+        });
+
+        scissor.addEventListener("click", () => {
+            choice="Scissor";
+            bot();
+            system();
+            Ipaper.style.display = "none";
+            Iscissor.style.display = "flex";
+            Irock.style.display = "none";
+        });
+
+        rock.addEventListener("click", () => {
+            choice="Rock";
+            bot();
+            system();
+            Ipaper.style.display = "none";
+            Iscissor.style.display = "none";
+            Irock.style.display = "flex";
+        });
+    </script>
+</body>
+</html>
