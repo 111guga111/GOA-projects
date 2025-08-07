@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            };
+            get describe() {
+                return `This animal is called "${this.name}", it is ${this.age} years old.`;
+            }
+        }
+        class Dog extends Animal {
+            constructor(name, age, _energy) {
+                super(name, age);
+                this._energy = _energy;
+            }
+
+            set energy(a) {
+                if (this._energy<50){
+                    this._energy = a
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

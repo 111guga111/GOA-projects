@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Account {
+            constructor(password, email, name) {
+                this.password = password;
+                this.email = email;
+                this.name = name;
+            }
+
+            introduce() {
+                console.log(`hi i am ${this.name}`);
+            }
+
+            set changePassword(newPassword) {
+                let hasLetter = false;
+                let hasNumber = false;
+
+                for (let i = 0; i < newPassword.length; i++) {
+                    const current = newPassword[i];
+
+                    if ((current >= 'a' && current <= 'z') || (current >= 'A' && current <= 'Z')) {
+                        hasLetter = true;
+                    }
+
+                    if (current >= '0' && current <= '9') {
+                        hasNumber = true;
+                    }
+                }
+
+                const minLength = newPassword.length >= 6;
+
+                if (minLength && hasLetter && hasNumber) {
+                    this.password = newPassword;
+                    console.log("password changed");
+                } else {
+                    console.log("password must have 6 or more characters, with English letters and numbers");
+                }
+            }
+
+            get getEmail() {
+                return this.email;
+            }
+        }
+
+        const acc = new Account("pass123", "test@example.com", "გუგა");
+        acc.introduce();
+        acc.changePassword = "new1";
+        acc.changePassword = "newpass1";
+        console.log(acc.getEmail);
+        // classes dont clone the function unlike costructor functions witch ruin our optimisation
+    </script>
+</body>
+</html>

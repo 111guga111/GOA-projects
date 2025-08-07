@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300..900&display=swap');
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 98vh;
+        background-color: rgb(211, 211, 211);
+        font-weight: bolder;
+        font-family: "Rubik", sans-serif;
+    }
+    main{
+        justify-items: center;
+        border: 5px solid black;
+        width: 700px;
+        height:900px;
+        background-color: rgb(211, 211, 211);
+        box-shadow: 0 0 10px black;
+        border-radius: 10px;
+        background-image: url(images/back.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    #list{
+        display: flex;
+        flex-direction: column;
+        gap:40px;
+        padding-top: 20px;
+        
+    }
+    #option{
+        display: flex;
+        gap: 30px;
+    }
+    
+    #off{
+        background-color: rgb(255, 185, 185);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 3px solid black;
+    }
+    #off:hover{
+        background-color: rgb(255, 139, 140);
+    }
+    #all{
+        background-color: rgb(144, 144, 255);
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 3px solid black;
+    }
+    #all:hover{
+        background-color: rgb(108, 108, 255);
+    }
+    #on{
+        background-color: rgb(180, 255, 185);
+        padding: 10px;
+        border-radius: 50%;
+        border: 3px solid black;
+        cursor: pointer;
+
+    }
+    #on:hover{
+        background-color: rgb(119, 255, 140);
+    }
+    #top{
+        margin: 0;
+        font-size: 60px;
+        
+    }
+    .items{
+        font-size: 30px;
+        border: 3px solid black;
+        width:500px;
+        background-color: rgb(232, 232, 232);
+        display: flex;
+        border-color: black;
+        border-radius: 10px;
+        cursor: pointer;
+        position: relative;
+        padding: 5px;
+    }
+    .do{
+        margin: auto auto;
+    }
+    .done{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+    .num{
+        position: absolute;
+        margin: 0;
+        left: 10px;
+    }
+</style>
+<body>
+    <main>
+        <p id="top">To-Do-list</p>
+            <div id="option">
+                <p id="all">Restart🔵</p><p id="off">Remove❌</p><p id="on">Insert✅</p>
+            </div>
+        <div id="list">
+        </div>
+    </main>
+    <script>
+        restart = document.getElementById("all")
+        off = document.getElementById("off")
+        on = document.getElementById("on")
+        lst = document.getElementById("list")
+        item = document.getElementById("list")
+
+        restart.addEventListener("click",e =>{
+            e.preventDefault();
+            lst.innerHTML = "";
+        })
+        off.addEventListener("click",e =>{
+            e.preventDefault();
+            if(lst.children.length==0){
+                alert("The list is empty. Please add items before removing.");
+            }else{
+                let index = prompt("Enter the number of the item to remove:");
+                if (index === null){
+                    lst.removeChild(lst.lastElementChild);
+                }else if(index>0 && index<=lst.children.length){
+                    lst.removeChild(lst.children[index-1]);
+                }else{
+                    alert("Invalid index. Please enter a valid number.");
+                }
+                Array.from(lst.children).forEach((child,i) => {
+                    let count = child.querySelector(".num");
+                    count.innerHTML = i + 1;
+                });
+            }
+        })
+        on.addEventListener("click",e =>{
+            e.preventDefault();
+            let newItem = prompt("Enter new item:");
+            if (newItem === null || newItem === ""){
+                alert("Please enter a valid item.");
+            }else if(lst.children.length < 8){
+                lst.innerHTML += `<div class="items"><p class="num">${lst.children.length+1}</p><p class="do">${newItem}</p> <p class="done">🔳</p></div>`;
+            }else{
+                alert("You can only add up to 8 items.");
+            }
+        })  
+        item.addEventListener("click",e =>{
+                e.preventDefault();
+                const checked = e.target.closest(".items");
+                let done = checked.querySelector(".done");
+
+                if (checked.style.backgroundColor != "rgb(119, 255, 200)" || checked.style.backgroundColor === "🔳") {
+                    done.innerHTML = "✅";
+                    checked.style.backgroundColor = "rgb(119, 255, 200)";
+
+                } else {
+                    checked.style.backgroundColor = "rgb(232, 232, 232)";
+                    done.innerHTML = "🔳";
+                }
+        })
+    </script>
+</body>
+</html>

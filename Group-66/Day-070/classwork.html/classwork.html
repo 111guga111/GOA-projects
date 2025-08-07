@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Class groups code and helps us create new copies 
+        class Person {
+            constructor(name, age, lastname, country) { // constructor is a special method that initializes the object
+                this.name = name;
+                this.age = age;
+                this.lastname = lastname;
+                this.country = country;
+            }
+        }
+
+        let person1 = new Person("Luka", 20, "Beridze", "Georgia");
+        let person2 = new Person("Nino", 25, "Chkheidze", "Georgia");
+        let person3 = new Person("Giorgi", 30, "Kapanadze", "USA");
+        let person4 = new Person("Ana", 18, "Gelashvili", "Italy");
+
+        console.log(person1);
+        console.log(person2);
+        console.log(person3);
+        console.log(person4);
+    </script>
+</body>
+</html>

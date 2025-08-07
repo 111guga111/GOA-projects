@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lst = [1,2,3,4,5,6,7];
+        let names = ["guga", "mamuka","andria"];
+        let boole = [true,false];
+        let all = ["guga", "mamuka","andria", 1 , 2 , 3 , true , false];
+
+        console.log(lst.findIndex(a => a%7==0));
+
+        console.log(names.findIndex(a => a[0]=="m"));
+
+        console.log(lst.reduce((first,i)=>first+i,0));
+
+        console.log(lst.reduce((first,i)=> first>i ? first:i));
+
+        console.log(names.reduce((first,i)=>first+i.length,0));
+
+        console.log(names.map(i => i+"!"));
+
+        console.log(boole.map(i => i? "yes":"no"));
+
+        console.log(all.filter(i => typeof(i) === "string"));
+
+        console.log(names.filter(i => i[i.length-1] === "y"));
+
+        console.log(all.some(i => typeof(i) === "string"));
+
+        console.log(lst.some(i => i % 2 === 0));
+
+        console.log(lst.some(i => i > 10)); 
+
+        console.log(lst.some(i => i === 0)); 
+
+        console.log(lst.some(i => i < 0));
+
+        console.log(all.every(i => typeof(i) === "string"));  
+
+        console.log(lst.every(i => i % 2 === 0));          
+
+        console.log(lst.every(i => i > 10));                 
+
+        console.log(lst.every(i => i === 0));                
+
+        console.log(lst.every(i => i < 0));         
+
+    </script>
+    <script src="manual.js"></script>
+</body>
+</html>

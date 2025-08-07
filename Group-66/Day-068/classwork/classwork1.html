@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lst = [1,2,3,4,5]
+        let obj = {
+            name:"Guga",
+            lastname:"Topchishvili",
+            age:17,
+            born:2008,
+            hobby:"programming"
+        }
+
+        //for in gives us index of every element in lst and in obj, it gives us the names of the elements
+        for(const i in lst){
+            console.log(i)
+        }
+        for(const i in obj){
+            console.log(i)
+        }
+
+        //for of gives us every element seperatly in lst and wont work on objectives
+        for(const i of lst){
+            console.log(i)
+        }
+
+        //this is the trick to force it work
+        for(const i of Object.values(obj)){
+            console.log(i)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(brand, model, year) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+            
+            this.introduce = function() {
+                console.log(brand,model,year);
+            };
+        }
+        const car1 = new Car("Toyota", "Corolla", 2019);
+        const car2 = new Car("Honda", "Civic", 2020);
+        const car3 = new Car("Ford", "Mustang", 1967);
+        const car4 = new Car("Tesla", "Model 3", 2022);
+
+        car1.introduce()
+        car2.introduce()
+        car3.introduce()
+        car4.introduce()
+        //Constructor helps us create multiple objectes easyer
+    </script>
+</body>
+</html>

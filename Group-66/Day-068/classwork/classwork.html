@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let people = [
+            {
+                name: "Luka",
+                age: 20,
+                talk: function() { console.log("says hi to friends"); },
+                gender: "male",
+                friends: ["Ana", "Giorgi", "Mari"],
+                address: { city: "Tbilisi", street: "Rustaveli", number: 10 }
+            },
+            {
+                name: "Guga",
+                age: 16,
+                talk: function() { console.log("says hi to friends"); },
+                gender: "male",
+                friends: ["Nika"],
+                address: { city: "Batumi", street: "Chavchavadze", number: 12 }
+            },
+            {
+                name: "Nino",
+                age: 25,
+                talk: function() { console.log("says hi to friends"); },
+                gender: "female",
+                friends: ["Ana", "Lasha"],
+                address: { city: "Kutaisi", street: "Davit Aghmashenebeli", number: 5 }
+            },
+            {
+                name: "Demetre",
+                age: 30,
+                talk: function() { console.log("says hi to friends"); },
+                gender: "male",
+                friends: ["Mariam", "Luka", "Saba"],
+                address: { city: "Tbilisi", street: "Kazbegi", number: 8 }
+            },
+            {
+                name: "Toko",
+                age: 15,
+                talk: function() { console.log("says hi to friends"); },
+                gender: "male",
+                friends: ["Elene", "Nika"],
+                address: { city: "Rustavi", street: "Gorgasali", number: 3 }
+            }
+        ];
+
+        function manualFilter(arr, cb) {
+            let result = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (cb(arr[i])) {
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+
+        let filteredPeople = manualFilter(people, person => person.age > 18 && person.friends.length >= 2);
+
+        console.log(filteredPeople);
+
+    </script>
+</body>
+</html>

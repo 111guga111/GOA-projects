@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this.name = name
+            }
+            get greet(){
+                console.log(`Hello ${this.name}!`)
+            }
+        }
+        class student extends Person{
+            constructor(name,grade){
+                super(name);
+                this.grade = grade
+            }
+            get study(){
+                  console.log(`${this.name} is studying and ${this.name}'s grade is ${this.grade}`)  
+            }
+        }
+    </script>
+</body>
+</html>

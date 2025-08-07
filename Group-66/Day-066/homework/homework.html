@@ -7,8 +7,27 @@
 </head>
 <body>
     <script>
+        let nums = [0,20,-30]
+        let strs = ["guga","ato","andria"]
+        //1 
+        console.log(nums.filter(a => a>10))
+        //2
+        console.log(nums.filter(a => a>=0))
+        //3
+        console.log(strs.filter(a => a[0]==="a"))
+        //4
+        console.log(strs.filter(a => a.length===3))
+        //5
+        console.log(nums.map(a => a%2===0))
+        //6
+        console.log(nums.map(a => a.toString()))
+        //7
 
+        //map loops over each element and each iteration it runs a code. returns the result.
 
+        //forEach loops over each element and each iteration it runs a code. doesnt return the result.
+
+        //filter loops over each element and the if condition is true it returns the element, if not, then skips it.
     </script>
 </body>
 </html>

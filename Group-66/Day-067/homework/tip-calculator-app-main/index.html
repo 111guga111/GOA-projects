@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    body{
+      font-family: "Space Mono", monospace;
+      display: flex;
+      justify-content: center;
+      background-color: #c5e4e7;
+    }
+    main{      
+      margin-top: 30vh;
+      display: grid;
+      width:830px;
+      height: 430px;
+      border-radius: 20px;
+      grid-template-columns: 1fr 1fr;
+      background-color: hsl(0, 100%, 100%);
+    }
+    #left{
+      grid-column:1;
+      margin-left: 40px;
+      border-radius:15px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+    #right{
+      width: 360px;
+      height: 380px;
+      margin-left: 30px;
+      border-radius:15px;
+      margin-top: 25px;
+      margin-bottom: 30px;
+      grid-column:2;
+      background-color: #00474b;
+    }
+    #amount{
+      margin-top: 30px;
+    }
+    #amount,#total{
+      display: flex;    
+      height: 100px;
+      justify-content: space-between; 
+      align-items: center;            
+      color: #f3ffff;
+      padding: 0 30px;              
+      box-sizing: border-box;
+    }
+    #reset{
+      background-color: hsl(172, 67%, 45%);
+      color: hsl(183, 100%, 15%);
+      margin-top:75px;
+      font-size: 25px;
+      text-align: center;
+      width: 275px;
+      height: 40px;
+      line-height: 40px;
+      font-weight: bold;
+      justify-self: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #reset:hover{
+      background-color: #9fe8df;
+    }
+    #dol{
+      font-size: 35px;
+    }
+    #ri{
+      color: #2ac4ac;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-left: 80px;
+      font-size: 40px;
+    }
+    #ri1{
+      color: #2ac4ac;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-left: 75px;
+      font-size: 40px;
+    }
+    .below{
+      position: relative;
+      color:hsl(186, 14%, 43%);
+      bottom: 15px;
+    }
+    #bill,#tip, #people{
+      display: flex;
+      flex-direction: column;
+      font-size: 19px;
+    }
+    #fn,#fi{
+      cursor: pointer;
+      box-sizing: border-box; 
+      border: solid transparent;
+      background-repeat: no-repeat;
+      background-position: 20px;
+      width: 100%;
+      height: 100%;
+      font-size: 25px;
+      font-weight: bold;
+      color: hsl(183, 100%, 15%);
+      background-color:#f3f8fb;
+      outline: none;          
+      text-align: right;         
+      font-family: "Space Mono", monospace;
+      padding-right: 15px;
+    }
+    #fn{
+      background-image: url(images/icon-person.svg);
+    }
+    #fi{
+      background-image: url(images/icon-dollar.svg);
+    }
+    #fi:hover,#fn:hover, #fi:focus,#fn:focus{
+      border:solid #8eddd2;
+    }
+    #fc{
+      box-sizing: border-box; 
+      background-position: 20px;
+      width: 115px;
+      height: 44px;
+      line-height: 40px;
+      font-size: 25px;
+      font-weight: bold;
+      color: hsl(183, 100%, 15%);
+      background-color:#f3f8fb;
+      border:solid transparent;
+      outline: none;          
+      text-align: center;         
+      font-family: "Space Mono", monospace;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #fc:focus{
+      border-color:#79c7bc;
+      padding-right: 15px;
+      text-align: right;
+      cursor: pointer;
+    }
+    #tip{
+      margin-top: 5px;
+    }
+    #people{
+      margin-top: 15px;
+    }
+    #tips{
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 1fr 1fr;
+      margin-top: 15px;
+      gap: 15px;
+      column-gap: 25px;
+    }
+    .p-tips{
+      box-sizing: border-box; 
+      font-size: 25px;
+      background-color: #00474b;
+      height: 44px;
+      width: 115px;
+      line-height: 44px;
+      text-align: center;
+      border-radius: 5px;
+      color: hsl(0, 100%, 100%);
+    }
+    .p-tips:hover{
+      background-color:#9fe8df;
+      color: #00474b;
+      cursor: pointer;
+    }
+    .p-tips p{
+      margin-top:0;
+    }
+    .p-tips:nth-child(6){
+      background-color: hsl(189, 47%, 97%);
+      color: hsl(183, 100%, 15%);
+      font-weight: 500;
+    }
+    h5{
+      color: hsl(183, 100%, 15%);
+      margin-bottom: 0;
+    }
+    .p-tag{
+      background-color: #f3f8fb;
+      height: 40px;
+      margin-top: 5px;
+      text-align: right;
+      width: 360px;
+    }
+    .p-tag p{
+      font-size: 25px;
+      color: hsl(183, 100%, 15%);
+      font-weight: bold;
+      margin-top: 2px;
+      margin-right: 20px;
+    }
+    #head{
+      position: absolute;
+      margin-top: 17vh;
+      color: hsl(183, 100%, 15%);
+      font-weight: bold;
+    }
+    .attribution { 
+      font-size: 11px; text-align: center;
+      position: absolute;
+      margin-top: 95vh;
+    }
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <p id="head">S P L I <br> T T E R</p>
+<main>
+    <div id="left">
+      <div id="bill">
+        <h5>Bill</h5>
+        <div class="p-tag"><input id="fi" value="0"></div>
+      </div>
+      <div id="tip">
+        <h5>Select Tip %</h5>
+        <div id="tips">
+        <div class="p-tips"><p>5%</p></div>
+        <div class="p-tips"><p>10%</p></div>
+        <div class="p-tips"><p>15%</p></div>
+        <div class="p-tips"><p>25%</p></div>
+        <div class="p-tips"><p>50%</p></div>
+        <input id="fc" placeholder="Custom">
+        </div>
+      </div>
+      <div id="people">
+        <h5>Number of People</h5>
+        <div class="p-tag"><input id="fn" value="0"></div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="amount">
+        <div class="tl">
+        <p class="top">Tip Amount</p>
+        <div class="below"><p>/ person</p></div>
+        </div>
+        <div class="p-right"><p id="ri"><span id="dol">$</span>0.00</p></div>
+      </div>
+      <div id="total">
+        <div class="tl">
+        <p>Total</p>
+        <div class="below"><p >/ person</p></div>
+        </div>
+        <div class="p-right"><p id="ri1"><span id="dol">$</span>0.00</p></div>
+      </div>
+      <div id="reset"><p>Reset</p></div>
+    </div>
+</main>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+  <script>
+    let bill = document.getElementById("fi")
+    let tip = document.getElementById("fc")
+    let perPerson = document.getElementById("ri")
+    let total = document.getElementById("ri1")
+    let people = document.getElementById("fn")
+    let final = document.getElementById("reset")
+    let tips = document.getElementsByClassName("p-tips");
+
+    Array.from(tips).forEach(a => a.addEventListener("click", () => {
+      let amount = parseFloat(bill.value) * (parseFloat(a.textContent.replace("%", "")) / 100);
+      if (isNaN(amount)){
+        amount = 0;
+      }
+      perPerson.innerHTML = '<span id="dol">$</span>' + amount.toFixed(2);
+    }));
+    
+    let totalAmount = (parseFloat(bill.value) + amount) / parseFloat(people.value);
+      if (isNaN(totalAmount)){
+        totalAmount = 0;
+      }
+      total.innerHTML = '<span id="dol">$</span>' + totalAmount.toFixed(2);
+
+
+  </script>
+</body>
+</html>

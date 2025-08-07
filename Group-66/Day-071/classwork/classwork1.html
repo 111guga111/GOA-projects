@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Vehicle {
+            constructor(brand, year) {
+                this.brand = brand;
+                this.year = year;
+            }
+
+            startEngine() {
+                console.log(`The engine of ${this.brand} is starting.`);
+            }
+
+            getInfo() {
+                return `This is a ${this.brand} made in ${this.year}.`;
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(brand, year, doors) {
+                super(brand, year);
+                this.doors = doors;
+            }
+
+            honk() {
+                console.log("Beep beep!");
+            }
+        }
+
+        class Motorcycle extends Vehicle {
+            constructor(brand, year, hasSidecar) {
+                super(brand, year);
+                this.hasSidecar = hasSidecar;
+            }
+
+            revEngine() {
+                console.log("Vrrroooom!");
+            }
+        }
+
+        const myCar = new Car("Example", 1000, 4);
+        const myMotorcycle = new Motorcycle("Example", 1000, false);
+
+        myCar.startEngine();
+        myCar.honk();
+        console.log(myCar.getInfo());
+
+        myMotorcycle.startEngine();
+        myMotorcycle.revEngine();
+        console.log(myMotorcycle.getInfo());
+    </script>
+</body>
+</html>

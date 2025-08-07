@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let account = {
+            _email:"example@gmail.com",
+            _pass:"example",
+            fullname:"example_example",
+
+            set pass(a){
+                if( a.length >= 6){
+                    this._pass = a
+                }else{
+                    console.log("pass isnt more then 5 length")
+                }
+            },
+
+            get email(){
+                return this._email
+            },
+
+            greet(){
+                console.log(`I am ${this.fullname}`)
+            }
+        }
+        
+    </script>
+</body>
+</html>

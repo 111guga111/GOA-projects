@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //findIndex helps us find the index of first element that fits our condition
+
+        let numbers = [2, 7, -9, 12, -15];
+        let strs = ["hello", "me"]
+
+        //in this example, it gives us the index of first element that is negative
+        let index = numbers.findIndex(num => num < 0);
+        console.log(index)
+
+        //in this example, it gives us the index of first element that is even
+        let index1 = numbers.findIndex(num => num%2===0);
+        console.log(index1)
+
+        //in this example, it gives us the index of first element that is odd
+        let index2 = numbers.findIndex(num => num%2!==0);
+        console.log(index2)
+
+        //this is manual function of findIndex
+        //in this example, it gives us the index of first element that is odd
+        const even = a => {return a%2!==0}
+
+        const manualIndex = (num,cb) => {
+
+            for(let i = 0; i<num.length;i++){
+                if(cb(num[i])){
+                    return i
+                }
+            }
+            return -1
+        }
+        console.log(manualIndex(numbers,even))
+
+        //reduce method
+
+        //example1:
+        console.log(numbers.reduce((first,second) => first + second, 1))
+        
+        //example2
+        console.log(numbers.reduce((first,second)=> first / second, 1))
+
+        //example3
+        console.log(strs.reduce((first,second)=> first + second, ""))
+
+        //manual
+        const manualReduce = (num, Cb, start) => {
+            let fStart = start;
+
+            for(let i = 0; i < num.length; i++) {
+                fStart = Cb(fStart, num[i]);
+            }
+
+            return fStart;
+        }
+
+            console.log(manualReduce(numbers, (a, b) => a + b, 0));
+    </script>
+
+</body>
+</html>

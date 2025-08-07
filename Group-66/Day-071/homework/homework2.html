@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Save to localStorage</title>
+</head>
+<body>
+    <form id="Form">
+        <input type="text" id="name" placeholder="Name" required /><br />
+        <input type="text" id="lastname" placeholder="Last Name" required /><br />
+        <input type="email" id="email" placeholder="Email" required /><br />
+        <input type="password" id="password" placeholder="Password" required /><br />
+        <button type="submit">Save</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('Form');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const lastname = document.getElementById('lastname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const userData = {
+                name,
+                lastname,
+                email,
+                password
+            };
+
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            alert('Data saved successfully!');
+            
+            form.reset();
+        });
+        /* 
+            super() - calls the parent class constructor from a subclass, 
+            allowing the subclass to inherit and initialize parent properties.
+        */
+
+        /* 
+            localStorage - browser storage for saving key-value pairs locally on the user's device. 
+            Data persists even after page reloads or browser restarts, stored as strings.
+        */
+
+    </script>
+</body>
+</html>

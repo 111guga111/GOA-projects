@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    body{
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      background-color: #f0f0f0;
+      font-size: 32px;
+    }
+    main{
+      display: grid;
+      grid-template-rows: 100px 130px 400px;
+      background-color: #ffffff;
+      padding-top: 60px;
+      padding-left: 60px;
+      width:780px;
+      height: 550px;
+      margin-left: 26%;
+      margin-top: 10%;
+      border-radius: 30px;
+      border-bottom-right-radius: 150px;
+    }
+    #dates{
+      display: flex;
+      gap: 50px;
+      line-height: 0.5;
+      font-size: 13px;
+      font-weight: bold;
+      color: #787878;
+      grid-row: 1;
+    }
+    #day,#month,#year{
+      display: flex;
+      flex-direction: column;
+    }
+    #dates input{
+      width: 140px;
+      height: 60px;
+      outline-color: #e0e0e0;
+      cursor: pointer;
+      outline: none;
+      font-size:25px;
+      font-weight: bold;
+      padding-left: 15px;
+      border-radius: 5px;
+      border: 1px solid #e0e0e0;
+    }
+    #dates input:focus,#dates input:hover{
+      border-color: #b29cef ;
+      caret-color: #a189d7;
+    }
+    #bDates{
+      display: flex;
+      flex-direction: column;
+      grid-row: 3;
+    }
+    #AYear,#AMonth,#ADays{
+      display: flex;
+      gap: 10px;
+      font-size: 80px;
+      font-weight:bolder;
+    }
+    #AYear p,#AMonth p,#ADays p{
+      line-height: 1.1;
+      margin: 0;
+    }
+    #Year,#Month,#Days{
+      color: #854dff;
+    }
+    #line{
+      grid-row: 2;
+      background-color: #efefef;
+      position: relative;
+      top: 45px;
+      width: 700px;
+      height: 5px;
+    }
+    #icon{
+      background-color: #864dfb;
+      margin-left: 650px;
+      position: relative;
+      bottom:38px;
+      border-radius: 50px;
+      width: 80px;
+      height: 80px;
+      background-image: url(/Day-067/homework/age-calculator-app-main/age-calculator-app-main/assets/images/icon-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+    #icon:hover{
+      background-color: #151515;
+    }
+    #answer1,#answer2,#answer3{
+      color: #f58d96;
+      font-weight: bold;
+      height:1px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <form>
+      <div id="dates">
+        <div id="day">
+          <p id="d">DAY</p>
+          <input id="dIn" placeholder="DD" name="day">
+          <p id="answer1"></p>
+        </div>
+        <div id="month">
+          <p id="m">MONTH</p>
+          <input id="mIn" placeholder="MM" name="month">
+          <p id="answer2"></p>
+        </div>
+        <div id="year">
+          <p id="y">YEAR</p>
+          <input id="yIn" placeholder="YYYY" name="year">
+          <p id="answer3"></p>
+        </div>
+      </div>
+      <div id="line"><button id="icon" type="submit"></button></div>
+    </form>
+    <div id="bDates">
+      <div id="AYear"><p id="Year">--</p><p>years</p></div>
+      <div id="AMonth"><p id="Month">--</p><p>months</p></div>
+      <div id="ADays"><p id="Days">--</p> <p>days</p></div>
+    </div>
+    <script>
+      enter = document.getElementById("icon")
+      day = document.getElementById("dIn")
+      dAn = document.getElementById("answer1")
+      month = document.getElementById("mIn")
+      mAn = document.getElementById("answer2")
+      year = document.getElementById("yIn")
+      yAn = document.getElementById("answer3")
+      Day = document.getElementById("Days")
+      Month = document.getElementById("Month")
+      Year = document.getElementById("Year")
+      d = document.getElementById("d")
+      m = document.getElementById("m")
+      y = document.getElementById("y")
+
+      enter.addEventListener("click",(e)=>{
+        e.preventDefault();
+        if(day.value===""){
+          day.style.borderColor="#f58d96"
+          d.style.color="#de716f"
+          dAn.textContent="This field is required"
+          Day.textContent="--"
+        }else if(day.value<1 || day.value>31){
+          day.style.borderColor="#f58d96"
+          d.style.color="#de716f"
+          dAn.textContent="Must be a valid day"
+          Day.textContent="--"
+        }else{
+          day.style.borderColor="#e0e0e0"
+          d.style.color="#787878"
+          dAn.textContent=""
+          Day.textContent=day.value
+        }
+
+        if(month.value===""){
+          month.style.borderColor="#f58d96"
+          m.style.color="#de716f"
+          mAn.textContent="This field is required"
+          Month.textContent="--"
+        }else if(month.value<1 || month.value>12 ){
+          month.style.borderColor="#f58d96"
+          m.style.color="#de716f"
+          mAn.textContent="Must be a valid month"
+          Month.textContent="--"
+        }else{
+          month.style.borderColor="#e0e0e0"
+          m.style.color="#787878"
+          mAn.textContent=""
+          Month.textContent=month.value
+        }
+
+        if(year.value===""){
+          year.style.borderColor="#f58d96"
+          y.style.color="#de716f"
+          yAn.textContent="This field is required"
+          Year.textContent="--"
+        }else if(year.value<0 || year.value>2025 ){
+          year.style.borderColor="#f58d96"
+          y.style.color="#de716f"
+          yAn.textContent="Must be a valid year"
+          Year.textContent="--"
+        }else{
+          year.style.borderColor="#e0e0e0"
+          y.style.color="#787878"
+          yAn.textContent=""
+          Year.textContent=year.value
+        }
+      })
+    </script>
+  </main>
+</body>
+</html>
