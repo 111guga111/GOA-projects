@@ -6,6 +6,60 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        const form = document.querySelector("form");
+
+        class Account {
+            constructor(email, password, fullname){
+                this.email = email;
+                this._password = password;
+                this.fullname = fullname;
+            }
+
+            set password(newPassword) {
+                this._password = newPassword;
+            }
+
+            static checkIfExsist(email) {
+                const accounts = Account.getFromStorage('accounts')
+                const accExsist = accounts.find(obj => obj.email === email);
+
+                return Boolean(accExsist);
+            } 
+
+            static getFromStorage(key) {
+                return JSON.parse(localStorage.getItem(key)) || []
+            }
+
+            static addToStorage(account) {
+                const accounts = Account.getFromStorage('accounts') || [];
+                const accountExsist = Account.checkIfExsist(account.email);
+
+                if(accountExsist) {
+                    alert("Account exsists");
+                    return;
+                }
+
+                accounts.push(account);
+
+                localStorage.setItem('accounts', JSON.stringify(accounts));
+            }
+            
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const email = form.email.value;
+            const password = form.password.value;
+            const fullname = form.fullname.value;
+            
+            const account = new Account(email, password, fullname);
+
+            Account.addToStorage(account);
+        })
+            /*json helps us store objects as strings
+            local storage is where information is stored on our pc */
+    </script>
 </body>
 </html>

@@ -4,8 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-weight: bolder;
+            background-image: url(images/back.avif);
+            display: flex;
+            width: 98vw;
+            height: 98vh;
+            justify-content: center;
+            align-items: center; 
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            border: 3px solid black;
+            width: 800px;
+            padding: 20px;
+            background-color: rgb(198, 198, 198);
+            background-image: url(images/Logo.png);
+            background-repeat: no-repeat;
+            background-size: 200px 140px;
+            background-position: 0 10px;
+            box-shadow: 0 0 15px black;
+            border-radius: 10px;
+        }
+        #carForm {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            border-radius: 10px;
+        }
+        #carForm input {
+            text-align: center;
+            border-radius: 2px;
+        }
+        
+        #carList {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 600px;
+            gap: 10px;
+            border: 3px solid black;
+            padding: 20px;
+            background-color: rgb(224, 224, 224);
+            border-radius: 10px;
+        }
+        #head{
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        .carI{
+            margin: 0;
+            font-size: 25px;
+        }
+        #options {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color:rgb(224, 224, 224) ;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        #delete {
+            background-color: rgb(255, 185, 185);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid black;
+        }
+        #delete:hover {
+            background-color: rgb(255, 139, 140);
+        }
+        #sub {
+            background-color: rgb(255, 255, 255);
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+        }   
+        #sub:hover {
+            background-color: rgb(211, 211, 211);
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <div id="options">
+            <form id="carForm">
+                <input type="text" name="make" placeholder="Make">
+                <input type="text" name="model" placeholder="model">
+                <input type="text" name="year" placeholder="Year">
+                <input type="text" name="id" placeholder="id"><br>
+                <button type="submit" id="sub">Submit</button>
+            </form>
+            <p id="delete">Delete</p>
+        </div>
+        <div id="carList">
+            <h1 id="head">Cars:</h1>
+        </div>
+    </main>
+
+
+
+    <script>
+        const form = document.querySelector("#carForm");
+        const button = document.querySelector("button");
+        const carList = document.querySelector("#carList");
+        const Delete = document.querySelector("#delete");
+        let cars=[]
+        
+        class Car{
+            constructor(make, model, year, id){
+                this.make = make;
+                this.model = model;
+                this.year = year;
+                this.id = id
+            }
+
+            static addToStorage(newCar) {
+                if (cars.find(obj => obj.id === newCar.id)) {
+                    alert("Car already exists");
+                }else if(newCar.make === "" || newCar.model === "" || newCar.year === "" || newCar.id === "") {
+                    alert("Please fill all fields");
+                }else {
+                    cars.push(newCar);
+                    carList.innerHTML += `<p id=${newCar.id} class="carI" >${newCar.make} ${newCar.model} (${newCar.year}) - ID: ${newCar.id}</p>`;
+                    localStorage.setItem('cars', JSON.stringify(cars));
+                    form.reset();
+                }
+            }
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const newCar = new Car(form.make.value, form.model.value, form.year.value, form.id.value);
+            Car.addToStorage(newCar);
+        });
+
+        Delete.addEventListener("click", (e) => {
+            e.preventDefault();
+            const deleteId = prompt("Enter the ID of the car to delete:");
+            if(carList.innerHTML === `<h1 id="head">Cars:</h1>`){
+                alert("The list is empty. Please add cars before removing.");
+            
+            }else if (deleteId === null || deleteId === ""){
+                alert("Please enter a valid ID.");
+            }else if(!cars.some(obj => obj.id === deleteId)){
+                alert("Car with this ID does not exist.");
+            }else {
+                carList.removeChild(document.getElementById(deleteId));
+                cars = cars.filter(car => car.id !== deleteId);
+                localStorage.setItem('cars', JSON.stringify(cars))
+            }
+        });
+    </script>
 </body>
 </html>
