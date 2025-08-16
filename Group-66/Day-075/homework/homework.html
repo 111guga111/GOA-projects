@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(174, 174, 174);
+        }
+        main {
+            display: flex;
+            margin: 0 auto;
+            width: 700px;
+            justify-content: center;
+            background-color: aliceblue;
+            border: solid 3px black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #product-list {
+            display: flex;
+            padding: 0;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .products {
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            gap: 15px;
+            background-color: rgb(187, 203, 217);
+            border: solid 3px black;
+            border-radius: 10px;
+            height: 20px;
+            padding: 20px;
+        }
+        .names {
+            font-weight: bold;
+        }
+        .prices {
+            border: solid 3px black;
+            background-color: rgb(241, 255, 220);
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 5px;
+            color: green;
+        }
+        #head {
+            background-color: rgb(187, 203, 217);
+            border: solid 3px black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="shop">
+            <h1 id="head">Products:</h1>
+            <ul id="product-list"></ul>
+        </section>
+    </main>
+
+    <script>
+        list = document.getElementById("product-list");
+        fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(data => data.forEach(product => list.innerHTML +=`<li class="products"><strong><p class="names">${product.title}</p></strong><p class="prices">$${product.price}</p></li>`))
+            .catch(err => console.log(err))
+        
+
+
+        const name = name =>{
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                if (name.length > 3) {
+                    resolve("Good name!");
+                } else {
+                    reject("Bad name!");
+                }
+                }, 1000);
+            });
+        }
+        name("Guga")
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
+        
+            
+        const age = age => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (age > 18) {
+                        resolve("You are an adult!");
+                    } else {
+                        reject("You are a minor!");
+                    }
+                }, 1000);
+            });
+        }
+        age(20)
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
+
+    </script>
+</body>
+</html>

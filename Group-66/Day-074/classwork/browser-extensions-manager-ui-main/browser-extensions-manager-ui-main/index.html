@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Browser extensions manager UI</title>
+
+  <style>
+    html, body {
+      margin: 0;         
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+      background:linear-gradient(180deg, #040918 0%, #091540 100%);
+      background-repeat: no-repeat;
+      background-size: cover; 
+      height: 100vh;
+    }
+    #list{
+      display: grid;
+      grid-template-columns: 0.1fr 0.1fr 0.1fr;
+      gap: 10px;
+    }
+    .extensions {
+      background-color: #1f2534;
+      position: relative;
+      padding: 15px;
+      width: 400px;
+      height: 150px;
+      border-radius: 20px;
+      border:solid 1px #4a5166;
+    }
+    #header{
+      display: flex;
+      width: 1310px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #options{
+      display: flex;
+      gap: 10px;
+    }
+    #active, #inact, #all{
+      border: solid 2px transparent;
+      padding: 10px;
+      border-radius: 30px;
+      color: #d6dbe4;
+      background-color: #2f354c;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    #top{
+      margin: 0;
+      font-size: 26px;
+      color: #f5faf5;
+    }
+    #top p{
+      margin: 0;
+    }
+    .name{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .name p{
+      margin: 0;
+    }
+    .profile{
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .profile img{
+      width: 60px;
+      height: 60px;
+    }
+    .above{
+      font-size: 25px;
+      color: #e2e5eb;
+    }
+    .below{
+      color: #696e78;
+      font-size: 18px;
+    }
+    #search{
+      display: flex;
+      justify-content: space-between;
+      background-color: #1f2535;
+      width: 1310px;
+      height: 50px;
+      padding: 5px;
+      margin-top: 30px;
+      margin-bottom: 25px;
+      border-radius: 15px;
+      align-items: center;
+    }
+    #logo-container{
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+    #sun-container{
+      display: flex;
+      align-items: center;
+      margin-right: 10px; 
+      background-color: #525867;
+      padding: 10px;
+      border: solid 2px transparent;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    #sun{
+      width: 20px;
+      height: 20px;
+    }
+    .toggle-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      width: 400px;
+      bottom: 5px;
+    }
+    .rem{
+      color: #d6dbe4;
+      border: solid 2px #3d4252;
+      cursor: pointer;
+      font-size: 20px;
+      width: 80px;
+      text-align: center;
+      padding: 5px;
+      border-radius: 30px;
+    }
+    .rem:hover{
+      background-color: #52576a;
+    }
+    .toggle {
+      width: 50px;
+      height: 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      appearance: none;
+      background-color: #525868;
+      position: relative;
+      transition: background-color 0.3s;
+    }
+    .toggle::before {
+      content: "";
+      position: absolute;      
+      left: 2px;        
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fcfdff;
+      transition: transform 0.3s;
+    }
+    .toggle:checked {
+      background-color: #f15c57;
+    }
+    .toggle:checked::before {
+      transform: translate(25px, -50%);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="search">
+      <div id="logo-container">
+        <img src="./assets/images/logo.svg" id="logo" alt="Logo">
+      </div>
+      <p id="sun-container"><img src="./assets/images/icon-sun.svg" id="sun" alt="sun"></p>
+    </section>
+    <section id="header">
+      <section id="top">
+        <p>Extensions List</p>
+      </section>
+      <section id="options">
+        <div id="All"><p id="all">All</p></div>
+        <div id="Active"><p id="active">Active</p></div>
+        <div id="Inact"><p id="inact">Inactive</p></div>
+      </section>
+    </section>
+
+    <section id="list">
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-devlens.svg" alt="DevLens Logo">
+          <div class="name">
+            <p class="above">DevLens</p>
+            <p class="below">Quickly inspect page layouts and visualize element boundaries.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-style-spy.svg" alt="StyleSpy Logo">
+          <div class="name">
+            <p class="above">StyleSpy</p>
+            <p class="below">Instantly analyze and copy CSS from any webpage element.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-speed-boost.svg" alt="SpeedBoost Logo">
+          <div class="name">
+            <p class="above">SpeedBoost</p>
+            <p class="below">Optimizes browser resource usage to accelerate page loading.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-json-wizard.svg" alt="JSONWizard Logo">
+          <div class="name">
+            <p class="above">JSONWizard</p>
+            <p class="below">Formats, validates, and prettifies JSON responses in-browser.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-tab-master-pro.svg" alt="TabMaster Pro Logo">
+          <div class="name">
+            <p class="above">TabMaster Pro</p>
+            <p class="below">Organizes browser tabs into groups and sessions.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-viewport-buddy.svg" alt="ViewportBuddy Logo">
+          <div class="name">
+            <p class="above">ViewportBuddy</p>
+            <p class="below">Simulates various screen resolutions directly within the browser.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-style-spy.svg" alt="NetworkSpy Logo">
+          <div class="name">
+            <p class="above">NetworkSpy</p>
+            <p class="below">Monitors and logs network requests in real-time.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-grid-guides.svg" alt="GridGuides Logo">
+          <div class="name">
+            <p class="above">GridGuides</p>
+            <p class="below">Overlay customizable grids and alignment guides on any webpage.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-palette-picker.svg" alt="Palette Picker Logo">
+          <div class="name">
+            <p class="above">Palette Picker</p>
+            <p class="below">Instantly extracts color palettes from any webpage.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-link-checker.svg" alt="LinkChecker Logo">
+          <div class="name">
+            <p class="above">LinkChecker</p>
+            <p class="below">Scans and highlights broken links on any page.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-dom-snapshot.svg" alt="DOM Snapshot Logo">
+          <div class="name">
+            <p class="above">DOM Snapshot</p>
+            <p class="below">Capture and export DOM structures quickly.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+      <section class="extensions">
+        <div class="profile">
+          <img src="assets/images/logo-console-plus.svg" alt="ConsolePlus Logo">
+          <div class="name">
+            <p class="above">ConsolePlus</p>
+            <p class="below">Enhanced developer console with advanced filtering and logging.</p>
+          </div>
+        </div>
+        <div class="toggle-container">
+          <p class="rem">Remove</p>
+          <input type="checkbox" class="toggle">
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <script>
+    let dark = true;
+    const change = document.getElementById("sun-container");
+    const body = document.querySelector("body");
+    const sun = document.getElementById("sun");
+    const search = document.getElementById("search");
+    const all = document.getElementById("all");
+    const active = document.getElementById("active");
+    const inact = document.getElementById("inact");
+    const Top = document.getElementById("top");
+    const extensions = document.querySelectorAll(".extensions");
+    const above = document.querySelectorAll(".above");
+    const options = document.querySelectorAll("#options p");
+    const rems = document.querySelectorAll(".rem");
+    const logo = document.getElementById("logo");
+
+    const Check = () => {
+      const toggle = document.querySelectorAll(".toggle");
+      const toggleArray = Array.from(toggle);
+      toggleArray.forEach(tog => {
+        const handle = () => {
+          all.style.backgroundColor = dark ? "#2f354c" : "#fcfdff";
+          active.style.backgroundColor = dark ? "#2f354c" : "#fcfdff";
+          inact.style.backgroundColor = dark ? "#2f354c" : "#fcfdff";
+
+          all.style.borderColor = "transparent";
+          active.style.borderColor = "transparent";
+          inact.style.borderColor = "transparent";
+
+          if (toggleArray.every(c => c.checked)) {
+            active.style.backgroundColor = "#f35c55";
+          } else if (toggleArray.every(c => !c.checked)) {
+            inact.style.backgroundColor = "#f35c55";
+          } else {
+            active.style.borderColor = "#f35c55";
+            all.style.borderColor = "#f35c55";
+            all.style.backgroundColor = "#f35c55";
+          }
+        };
+        tog.addEventListener("change", handle);
+        
+        handle();
+      });
+    };
+    Check();
+
+    change.addEventListener("click", () => {  
+
+      body.style.background = dark ? "linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)" : "linear-gradient(180deg, #040918 0%, #091540 100%)";
+      logo.src = dark ? "./assets/images/logo.svg" : "./assets/images/logo1.svg";
+      logo.alt = dark ? "Light Logo" : "Dark Logo";
+      sun.src = dark ? "./assets/images/icon-moon.svg" : "./assets/images/icon-sun.svg";
+      sun.alt = dark ? "moon" : "sun";
+
+      change.style.backgroundColor = dark ? "#e8ebea" : "#525868";
+      search.style.backgroundColor = dark ? "#fcfdff" : "#1f2535";
+      active.style.color = dark ? "#1d2343" : "#d6dbe4";
+      inact.style.color = dark ? "#1d2343" : "#d6dbe4";
+      all.style.color = dark ? "#1d2343" : "#d6dbe4";
+      Top.style.color = dark ? "#1d2343" : "#f5faf5";
+
+      extensions.forEach(ext => {
+        ext.style.backgroundColor = dark ? "#fcfdff" : "#1f2534";
+        ext.style.borderColor = dark ? "#d0d5dd" : "#4a5166";
+      });
+
+      rems.forEach(rem => {
+        rem.style.color = dark ? "#1d2343" : "#d6dbe4";
+      });
+
+      above.forEach(ab => ab.style.color = dark ? "#1d2343" : "#e2e5eb");
+
+      dark = !dark;
+      
+      Check();
+    });
+
+    rems.forEach((rem, index) => {
+      rem.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.target.parentElement.parentElement.remove();
+        Check();
+      });
+    });
+  </script>
+</body>
+</html>

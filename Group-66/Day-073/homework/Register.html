@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-image: url(images/back.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #eed7ff;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            background: #27005e;
+            background: linear-gradient(222deg, rgba(39, 0, 94, 1) 45%, rgba(25, 0, 79, 1) 72%, rgba(14, 0, 41, 1) 100%);
+            gap: 10px;
+            width: 300px;
+            padding: 30px;
+            align-items: center; 
+            border: solid 3px black;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        #enter{
+            margin-top: 10px;
+            width: 180px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #4900b0;
+            color: #eed7ff;
+        }
+        #auth, #reg {
+            text-align: center;
+            border: solid 3px black;
+            padding: 10px;
+            width: 200px;
+            background-color: #4900b0;
+            border-radius: 5px;
+        }
+        #auth h1, #reg h1{
+            margin: 15px;
+            margin-top:0;
+        }
+        #result {
+            margin-top: 15px;
+            text-align: center;
+            border: solid 3px black;
+            padding: 10px;
+            padding-top: 0;
+            width: 280px;
+            background-color: #4900b0;
+            border-radius: 5px;
+        }
+        input{
+            background-color: #eed7ff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="auth">
+            <h1>Authentication</h1>
+            <form id="authForm">
+                <input type="email" id="authEmail" placeholder="Email">
+                <input type="text" id="authfullname" placeholder="Full Name">
+                <input type="password" id="authPassword" placeholder="Password">
+            </form>
+        </section>
+
+        <section id="reg">
+            <h1>Registration</h1>
+            <form id="regForm">
+                <input type="email" id="regEmail" placeholder="Email">
+                <input type="password" id="regPassword" placeholder="Password">
+            </form>
+        </section>
+
+        <button id="enter">enter</button>
+
+        <section id="result">
+            <h1>User:</h1>
+            <p id="userInfo"></p>
+        </section>
+    </main>
+    <script>
+
+        const auth = document.getElementById('auth');
+        const authEmail = document.getElementById('authEmail');
+        const authFullname = document.getElementById('authfullname');  
+        const authPassword = document.getElementById('authPassword');
+
+        const reg = document.getElementById('reg');
+        const regEmailS = document.getElementById('regEmail');
+        const regPasswordS = document.getElementById('regPassword');
+
+        const sumbit = document.getElementById('enter');
+
+        const info = document.getElementById('userInfo');
+
+        const users = [];
+
+
+        const authForm = document.getElementById('authForm');
+        const regForm = document.getElementById('regForm');
+
+        sumbit.addEventListener('click', function() {
+            const email = authEmail.value;
+            const fullname = authFullname.value;
+            const password = authPassword.value;
+            
+            const regEmail = regEmailS.value;
+            const regPassword = regPasswordS.value;
+
+            if (email === regEmail && password === regPassword) {
+
+                const existingUser = users.find(user => user.email === email);
+
+                if (existingUser) {
+                    alert('The email already registered');
+                    return;
+                }else if(email === '' || fullname === '' || password === ''){
+                    alert('Please fill in all fields');
+                }else{
+                    users.push({ email, fullname, password });
+                    alert('You have registered successfully');
+                    authForm.reset();
+                    regForm.reset();
+                    info.innerHTML = `<strong>Full Name:</strong> ${fullname}<br><strong>Email:</strong> ${email}`;
+                }
+            }else{
+                alert('Authentication failed. Please check if Authentication matches Registration');
+            }
+        });
+    </script>
+
+</body>
+</html>

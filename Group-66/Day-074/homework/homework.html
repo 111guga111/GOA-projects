@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            const time = 13;
+            const current = new Date().getHours();
+
+            time === current ? resolve("match") : reject("no match");
+        });
+
+        promise.then(res => console.log(res)).catch(err => console.log(err));
+
+
+        const promise1 = new Promise((resolve, reject) => {
+            const num = 8;
+
+            num % 2 === 0 ? resolve("The Number is even") : reject("The Number is odd");
+        });
+
+        promise1.then(res => console.log(res)).catch(err => console.log(err));
+
+        
+        //setTimeout delays the inside code for given time
+        //setInterval repeats the inside code for given time
+
+        const sayHello = () => {
+            setTimeout(() => {
+                console.log("Hello");
+            }, 5000);
+        }
+        sayHello();
+        
+        const sayHello1 =() => {
+            setInterval(() => {
+                console.log("Hello");
+            }, 4000);
+        }
+        sayHello1();
+
+    </script>
+</body>
+</html>

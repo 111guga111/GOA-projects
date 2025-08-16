@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promise = new Promise((resolve, reject) => {
+            let number = Math.floor(Math.random() * 11);
+            if (number > 3) {
+                resolve(`${number} is more than 3`);
+            } else {
+                reject(`${number} should be more than 3`);
+            }
+        });
+
+        const promise1 = new Promise((resolve, reject) => {
+            const orderReady = true; 
+
+            if (orderReady) {
+                resolve('Your order is ready');
+            } else {
+                reject('Your order got declined');
+            }
+        });
+
+        const promise2 = new Promise((resolve, reject) => {
+            const age = 17;
+
+            if (age >= 18) {
+                resolve('You are adult');
+            } else {
+                reject('You are not an adult');
+            }
+        });
+
+    </script>
+
+</body>
+</html>
