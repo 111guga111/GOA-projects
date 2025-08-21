@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(174, 174, 174);
+        }
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 auto;
+            width: 1500px;
+            justify-content: center;
+            background-color: aliceblue;
+            border: solid 3px black;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #product-list,#cart-list {
+            display: flex;
+            padding: 0;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .products,.cartProducts {
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            background-color: rgb(187, 203, 217);
+            border: solid 3px black;
+            border-radius: 10px;
+            height: 20px;
+            width: 500px;
+            padding: 20px;
+        }
+        .names,.cartNames {
+            font-weight: bold;
+        }
+        .prices,.cartPrices {
+            border: solid 3px black;
+            background-color: rgb(241, 255, 220);
+            text-align: center;
+            width: 60px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 5px;
+            color: green;
+            cursor: pointer;
+        }
+        .prices:hover {
+            background-color: rgb(255, 255, 0);
+        }
+        #head,#cartHead {
+            background-color: rgb(187, 203, 217);
+            width: 200px;
+            border: solid 3px black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+        .photos,.cartPhotos{
+            width: 50px;
+            height: 50px;
+            border-radius:5px;
+        }
+        
+        #shop,#cart{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: solid 3px black;
+        }
+
+        #shop{
+            background-color: grey;
+        }
+        #done{
+            display: flex;
+            align-items: center;
+            gap: 10PX;
+        }
+        #full{
+            font-size: 30px;
+        }
+        #buy{
+            width: 200px;
+            height: 30px;
+            background-color: green;
+            color: greenyellow;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #buy:hover{
+            background-color: rgb(0, 60, 0);
+        }
+        #both,#both1{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="shop">
+            <div id="both">
+                <h1 id="head">Products:</h1>
+                <ul id="product-list"></ul>
+            </div>
+        </section>
+        <section id="cart">
+            <div id="both1">
+                <h1 id="cartHead">Cart:</h1>
+                <ul id="cart-list"></ul>
+            </div>
+            <div id="done"><button id="buy">Buy</button><p id="full">Full price: 0.00$</p></div>
+        </section>
+    </main>
+
+    <script>
+        const list = document.getElementById("product-list");
+        const listCart = document.getElementById("cart-list");
+        const full = document.getElementById("full")
+        const all = []
+        let count = 0
+        const button = document.querySelector("#buy")
+
+        fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(data => data.forEach(product => list.innerHTML +=`<li class="products"><img class="photos" src = "${product.image}"><strong><p class="names">${product.title}--${product.rating.rate} (${product.rating.count} people)</p></strong><p class="prices">$${product.price}</p></li>`))
+            .then(() => {
+                const products = document.querySelectorAll(".products");
+                products.forEach(product => {
+                    const price = product.querySelector(".prices");
+                    const original = price.textContent;
+                    const name = product.querySelector(".names")
+                    const photo = product.querySelector(".photos").src
+
+                    price.onmouseover = function() {
+                        price.textContent = "+";
+                    }
+                    price.onmouseout = function() {
+                        price.textContent = `${original}`;
+                    }
+                    price.addEventListener("click",()=>{
+                        listCart.insertAdjacentHTML("beforeend",`<li class="cartProducts"><img class="cartPhotos" src = "${photo}"><p class="cartNames">${name.textContent}</p><p class="cartPrices">${original}</p></li>`);
+
+                        const newItem = listCart.lastElementChild
+                        const price = newItem.querySelector(".cartPrices");
+                        const old = price.textContent;
+                        const originalBackColor = price.style.backgroundColor
+                        const originalColor = price.style.color
+                        count += parseFloat(original.replace("$",""));
+                            
+                        price.addEventListener("click", () => {
+                            newItem.remove()
+                            count -= parseFloat(old.replace("$",""));
+                            full.textContent = `Full price: ${count.toFixed(2)}$`;
+                        })
+                        price.onmouseover = function() {
+                            price.textContent = "Delete";
+                            price.style.backgroundColor = "red";
+                            price.style.color = "rgb(255, 150, 150)";
+                        }
+                        price.onmouseout = function() {
+                            price.textContent = `${old}`;
+                            price.style.backgroundColor = originalBackColor;
+                            price.style.color = originalColor;
+                        }
+                        full.textContent = `Full price: ${count.toFixed(2)}$`;
+                    });
+
+                });
+            })
+            .catch(err => console.log(err))
+
+            button.addEventListener("click",()=>{
+                listCart.innerHTML = ""
+                count = 0
+                full.textContent = `Full price: ${count.toFixed(2)}$`;
+            })
+            
+    </script>
+</body>
+</html>

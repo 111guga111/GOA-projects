@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    body{
+      background-color: #36384d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Roboto", sans-serif;
+      height:98vh;
+    }
+    main{
+      display: flex;
+      background-color: #ffffff;
+      font-size: 15px;
+      width: 800px;
+      height: 530px;
+      border-radius: 15px;
+      padding: 15px;
+    }
+    #left{
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      width: 350px;
+      gap: 30px;
+    }
+    #head{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+    }
+    #options{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      color: #46474f;
+      font-weight: 400;
+    }
+    #head h1{
+      font-size: 50px;
+      color: #272a43;
+    }
+    #right{
+      display: flex;
+      justify-content: center;
+      width: auto;
+      height: auto;
+    }
+    #email{
+      outline: none;
+      border: 1px solid black;
+      border-radius: 3px;
+      font-size: 15px;
+      padding-left:20px;
+      width: 320px;
+      height: 48px;
+      font-weight: 700;
+    }
+    main form{
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    #inMail{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: #272a43;
+      font-weight: 700;
+    }
+    .op{
+      display: flex;
+      gap: 15px;
+    }
+    #button{
+      width: 320px;
+      height: 45px;
+      color: #eff1fb;
+      background-color: #272a43;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #button:hover{
+      background-color: hsl(4, 100%, 67%);
+      box-shadow:0 5px 40px hsl(4, 100%, 67%);
+    }
+    #below{
+      color: #3e404f;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Sign-up form start -->
+    <section id="left">
+      <section id="head">
+        <h1>Stay updated!</h1>
+        <p id="below">Join 60,000+ product managers receiving monthly updates on:</p>
+      </section>
+      <section id="options">
+        <div class="op"><img src="assets/images/icon-list.svg"><p>Product discovery and building what matters</p></div>
+        <div class="op"><img src="assets/images/icon-list.svg"><p>Measuring to ensure updates are a success</p></div>
+        <div class="op"><img src="assets/images/icon-list.svg"><p>And much more!</p></div>
+      </section>
+
+      <form>
+        <div id="inMail">
+          <div id="top"><lebel for="email">Email address</lebel><p></p></div>
+          <input id="email" type="email"  name="email"  placeholder="email@company.com" required/>
+        </div>
+        <button id="button" type="submit">Subscribe to monthly newsletter</button>
+      </form>
+    </section>
+    <img src="assets/images/illustration-sign-up-desktop.svg" id="right">
+  </main>
+  <script>
+    const button = document.querySelector("#button")
+    const body = document.querySelector("body")
+    const form = document.querySelector("form")
+    const input = document.querySelector("#email")
+    
+    form.addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const email = e.target.elements.email.value
+      if(email.includes("@") && email.includes(".com") && email.length > 13){
+          body.innerHTML = `
+          <main style="width:410px; height:410px; padding:35px; border-radius:20px;">
+            <form style="display:flex; flex-direction:column; gap:20px;">  
+              <section id="head" style="gap:25px;">
+                <img src="assets/images/icon-success.svg" style="width:50px; height:50px; margin-bottom:10px;">
+
+                <h1 style="font-size:40px; line-height:1;">Thanks for subscribing!</h1>
+
+                <p id="below" style="font-size:15px; font-weight:400; margin-bottom:20px;">A confirmation email has been sent to <span style="font-weight:700;">ash@loremcompany.com.</span> 
+                Please open it and click the button inside to confirm your subscription.</p>
+              </section>
+
+              <button id="button" type="submit" style="width:340px;">Dismiss message</button>
+            </form> 
+          </main>
+          `
+          
+        return;
+      }else{
+        input.style.backgroundColor = "#ffe8e6"
+        input.style.borderColor = "#ee837d"
+        input.style.color = "#ee837d"
+      }
+    });
+
+
+
+  </script>
+
+</body>
+</html>

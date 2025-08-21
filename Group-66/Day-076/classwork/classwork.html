@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="product-list">
+
+    </ul>
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(data => createProductLi(data))
+            .catch(err => console.log(err));
+
+        const render = products =>{
+            let list = "";
+            products.forEach(product => {
+                list += `<li class="products"><strong><p class="names">${product.title}</p></strong><p class="prices">$${product.price}</p> <img src="${product.image}"> <p>Rating: ${product.rating.rate}</p></li>`;
+            });
+            return list
+        } 
+
+        const createProductLi = function(product) {
+            let list = document.getElementById("product-list");
+            list.innerHTML+= render(product);
+            console.log(product);
+        }
+    </script>
+</body>
+</html>
