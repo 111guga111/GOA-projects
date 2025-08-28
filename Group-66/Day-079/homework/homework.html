@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 99vh;
+        }
+        main{
+            display: flex;
+            gap: 10px;
+        }
+        #market,#cart{
+            display: flex;
+            flex-direction: column;
+            border: solid black 2px;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: rgb(33, 61, 62);
+            width: 900px;
+            gap: 10px;
+        }
+        .items{
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            border: solid black 2px;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: rgb(195, 195, 195);
+        }
+        #market li:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+        #cart li:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+    <section id="Market">
+        <ul id="market">
+        </ul>
+    </section>
+    <section id="Cart">
+        <ul id="cart">
+        </ul>
+    </section>
+    </main>
+    <script>
+        const market = document.querySelector("#market")
+        const cart = document.querySelector("#cart")
+
+        const saveCart = () => {
+            const cartItems = Array.from(cart.children).map(item => ({
+                id: item.id,
+                text: item.textContent
+            }))
+            localStorage.setItem("cart", JSON.stringify(cartItems))
+        }
+
+        const loadCart = () => {
+            const saved = JSON.parse(localStorage.getItem("cart")) || []
+            saved.forEach(item => {
+                cart.innerHTML += `<li class="items" id="${item.id}"><p class="name">${item.text}</p></li>`
+            })
+        }
+
+        const asy  = async () => {
+            try{
+                const fet = await fetch(`https://fakestoreapi.com/products`);
+                const res = await fet.json();
+
+                res.forEach(element => {
+                    market.innerHTML += `<li class="items" id="${element.id}"><p class="name">${element.title} --- </p><p class="price">${element.price}</p></li>`
+                });
+
+                Array.from(market.children).forEach(element => {
+                    element.addEventListener("click",() => {
+                        cart.innerHTML += `<li class="items" id="${element.id}"><p class="name">${element.textContent}</p></li>`
+                        saveCart()
+                    })
+                });
+
+                loadCart()
+            }catch (error){
+                console.log(error)
+            }
+        };
+
+        asy()
+    </script>
+</body>
+</html>

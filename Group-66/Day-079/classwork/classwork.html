@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const asy = async () =>{
+            const res = await fetch(`https://fakestoreapi.com/products`)
+            const data = await res.json();
+
+            console.log(data)
+        }
+
+        asy();
+
+        /* 
+            try is where code runs witch might return error so catch will catch the error
+
+            async is a simple syntax for .then and .catch 
+
+            with await, code will wait till the answer is returned, without it, there would be an error
+        */
+    </script>
+</body>
+</html>

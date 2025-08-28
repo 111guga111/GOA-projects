@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+        }
+        body{
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(167, 167, 167);
+            height: 100vh;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(227, 227, 227);
+            border: solid black 5px;
+            border-radius:10px;
+            padding: 20px;
+        }
+        #list{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .items{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            font-weight: bolder;
+            gap: 10px;
+        }
+        .button{
+            background-color:red; 
+            cursor: pointer;
+            padding:3px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <ul id="list">
+
+        </ul>
+    </main>
+    <script>
+        const list = document.querySelector("#list")
+        const asyn = async () =>{
+            const fet = await fetch("https://fakestoreapi.com/products")
+            const ans = await fet.json()
+            ans.forEach((answear)=>{
+                list.innerHTML += `<li class="items">${answear.title} - <span style="color:green;">${answear.price}$</span><button class="button">Delete</button></li>`
+            })
+        }
+        asyn();
+        list.addEventListener("click",(e)=>{
+            e.preventDefault();
+            if (e.target.classList.contains("button")){
+                const item = e.target.closest("li")
+                item.remove();
+            }
+        })
+    </script>
+</body>
+</html> -
