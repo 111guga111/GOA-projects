@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(155, 155, 155);
+            gap: 50px;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            border: solid black 2px;
+            background-color: rgb(188, 188, 188);
+            border-radius: 10px;
+            padding: 20px;
+            gap: 50px;
+        }
+        header{
+            text-align: center;
+            font-weight: bolder;
+            border: solid black 2px;
+            background-color: rgb(188, 188, 188);
+            padding: 5px;
+            margin-top: 20px;
+            font-size: 50px;
+        }
+        section{
+            border: solid black 2px;
+            background-color: rgb(196, 201, 209);
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        .top{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .head{
+            background-color: white;
+            width:fit-content;
+            border: solid black 2px;
+            padding: 2px;
+            border-radius: 5px;
+        }
+        .text{
+            background-color: white;
+            border: solid black 2px;
+            padding: 2px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        img{
+            margin: auto;
+            border: solid black 3px;
+            width: 600px;
+            height: 300px;
+        }
+        .bottom{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Explanation of Secured Datas</header>
+    <main>
+
+        <section id="tcp">
+            <div class="top">
+                <h1 class="head">TCP</h1>
+                <p class="text">TCP makes sure both computers agree to communicate (handshake process), so it can send info between them safely, making sure there are no errors while transferring</p>
+            </div>
+            <img src="images/TCP.gif" alt="TCP illustration">
+            <div class="bottom">
+                <p class="text">
+                    TCP (Transmission Control Protocol) ensures reliable communication by establishing a connection through a three-way handshake.<br>
+                    It splits data into packets, numbers them, and checks for errors, guaranteeing that all packets arrive in the correct order.<br>
+                    If a packet is lost, TCP requests a retransmission, providing error detection, flow control, and reliable delivery of data between computers.
+                </p>
+            </div>
+        </section>
+
+        <section id="tls">
+            <div class="top">
+                <h1 class="head">TLS</h1>
+                <p class="text">TLS makes sure no one reads the information (man-in-the-middle attacks) while transferring. it encrypts the information (secret key)</p>
+            </div>
+            <img src="images/TLS.jpeg" alt="TLS illustration">
+            <div class="bottom">
+                <p class="text">
+                    TLS (Transport Layer Security) encrypts data to prevent eavesdropping and tampering during transmission.<br>
+                    It uses a combination of symmetric and asymmetric encryption to secure communication.<br>
+                    TLS authenticates the server (and optionally the client) and ensures integrity of the data.<br>
+                    This prevents attackers from intercepting or modifying the transmitted information, providing confidentiality and trust.
+                </p>
+            </div>
+        </section>
+
+        <section id="http">
+            <div class="top">
+                <h1 class="head">HTTP</h1>
+                <p class="text">HTTP is a set of rules for the information (Policy/Format)</p>
+            </div>
+            <img src="images/HTTP.gif" alt="HTTP illustration">
+            <div class="bottom">
+                <p class="text">
+                    HTTP (HyperText Transfer Protocol) defines how messages are formatted and transmitted on the web.<br>
+                    It specifies how clients request data from servers and how servers respond, including status codes, headers, and message bodies.<br>
+                    HTTP is stateless, meaning each request is independent.<br>
+                    It allows retrieving web pages, images, and other resources according to a standard protocol that both clients and servers understand.
+                </p>
+            </div>
+        </section>
+
+        <section id="https">
+            <div class="top">
+                <h1 class="head">HTTPS</h1>
+                <p class="text">HTTPS is the same as HTTP, but it's secure, so no one reads the information and confirms that server is real which we are talking to. (uses TLS)</p>
+            </div>
+            <img src="images/HTTPS.gif" alt="HTTPS illustration">
+            <div class="bottom">
+                <p class="text">
+                    HTTPS (HyperText Transfer Protocol Secure) combines HTTP with TLS encryption to secure web communications.<br>
+                    It ensures that data sent between the client and server is encrypted, preventing interception and tampering.<br>
+                    HTTPS verifies the authenticity of the server using digital certificates, protecting users from connecting to fraudulent or malicious websites.<br>
+                    It maintains both privacy and data integrity for secure communication.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
