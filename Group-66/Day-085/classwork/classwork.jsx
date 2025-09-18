@@ -1,0 +1,1 @@
+//react component is a function or class, which returns html elements and then React renders it, we use jsx to return elements

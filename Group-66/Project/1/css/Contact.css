@@ -1,0 +1,136 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#location{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ff;
+    box-shadow:inset #dee5ec 0px 15px 20px;
+    gap: 15px;
+    width: 100vw;
+    height: 200px;
+}
+
+#location h2{
+    font-size: 32px;
+}
+
+#location div{
+    display: flex;
+    font-size: 18px;
+    gap: 15px;
+}
+
+#info{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 30px;
+    gap: 50px;
+}
+#help{
+    display: flex;
+    flex-direction: column;
+    color:#222222;
+    width: 535px;
+    gap: 30px;
+}
+#helpInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#helpInfo h2{
+    font-size: 38px;
+}
+#helpInfo p{
+    color: #909090;
+}
+
+#details{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+#details i{
+    font-size: 32px;
+}
+
+#details section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#send{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#send form{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#inName, #inEmail{
+    border: #222222 solid 1px;
+    font-size: 18px;
+    padding-left: 20px;
+    border-radius: 5px;
+    width: 550px;
+    height: 50px;
+}
+
+#inMessage{
+    border: #222222 solid 1px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-top: 15px;
+    border-radius: 5px;
+    width: 550px;
+    height: 100px;    
+}
+
+#contacted{
+    border: #222222 solid 1px;
+    transition: all 0.3s;
+    background-color:#222222;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 555px;
+    height: 55px;
+}
+#contacted:hover{
+    color: #222222;
+    background-color: white;
+}
+
+#sendInfo{
+    display: flex;
+    flex-direction: column;
+    color:#222222;
+    width: 550px;
+    gap: 20px;
+}
+#sendInfo h2{
+    font-size: 35px;
+}
+#sendInfo p{
+    color: #909090;
+}
