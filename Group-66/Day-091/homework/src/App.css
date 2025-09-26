@@ -1,0 +1,18 @@
+#start{
+  text-align: center;
+  color: blue;
+  background-color: gray;
+  border: solid 2px black;
+}
+
+.info{
+  color: green;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  border: solid 2px black;
+  padding: 10px;
+  background-color: lightgray;
+}
