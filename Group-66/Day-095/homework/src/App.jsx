@@ -7,9 +7,14 @@ function App() {
   useEffect(()=>{
 
     const asy = async() => {
-      const fet = await fetch(`https://fakestoreapi.com/products`)
-      const res = await fet.json();
-      setProducts(res)
+      try{
+        const fet = await fetch(`https://fakestoreapi.com/products`)
+        const res = await fet.json();
+        setProducts(res)
+      }catch(err){
+        console.log(err)
+      }
+      
     }
 
     asy();
