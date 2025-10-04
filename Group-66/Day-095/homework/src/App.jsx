@@ -26,7 +26,18 @@ function App() {
   return (
     <>
       
-      <ul>{products.map(product => <li key={product.id}>{product.title}</li>)}</ul>
+      <ul style={{ listStyle:"none",display:"flex", flexDirection:"column", gap:20, width:400}}>
+        {products.map(product => 
+
+        <li key={product.id} style={{backgroundColor:'lightgrey', padding:20, border:"solid", textAlign:"center"}}>
+
+          <h1>{product.title}</h1> 
+          <p>{product.description}</p>
+          <img src= {product.image} width={200} backgo />
+
+        </li>)}
+      
+      </ul>
 
     </>
   )
