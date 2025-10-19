@@ -1,0 +1,234 @@
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#slide{
+    display: flex;
+    background-image: url(/photos/model.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    width: 100vw;
+    height: 600px;
+}
+
+#slideMenu{
+    display: flex;
+    flex-direction: column;
+    color: #222222;
+    margin: 20vw;
+    gap: 30px;
+}
+
+#storeHead{
+    font-weight:bolder;
+    font-size: 50px;
+}
+
+
+#storeName{
+    font-size: 18px;
+}
+
+#storeDiv{
+    display: flex;
+    font-size: 19px;
+    gap: 16px;
+}
+#storeDiv p{
+    display: flex;
+    background-color: #222222;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+}
+#storeDiv a{
+    text-decoration: none;
+    color: white;
+}
+
+#divItem1{
+    transition:all 0.3s;
+    width: 155px;
+    height: 51px;
+}
+#divItem1:hover{
+    background-color: #676767;
+    width: 165px;
+}
+
+#divItem2{
+    transition:all 0.3s;
+    width: 130px;
+    height: 51px;
+}
+#divItem2:hover{
+    background-color: #676767;
+    width: 140px;
+}
+
+
+#view{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#jewelery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/photos/jewellery.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    width:580px;
+    height: 500px;
+}
+#men{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/photos/menClothing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    width:580px;
+    height: 500px;
+}
+#women{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/photos/womanClothing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    width:580px;
+    height: 500px;
+}
+.viewIn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 155px ;
+    height: 150px;
+    gap:30px;
+    color: white;
+}
+
+.viewIn h2{
+    font-size: 40px;
+}
+.viewIn p{
+    font-size: 19px;
+}
+
+.bellowP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #222222;
+    transition:all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 19px;
+    border-radius: 5px;
+    padding: 20px;
+    width: 129px;
+    height: 51px;
+}
+.bellowP:hover{
+    background-color: #d0d0d0;
+}
+
+#trend{
+    display: flex;
+    background-image: url(/photos/BottomModel.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    background-position: center;
+    align-items: center;
+    width: 100vw;
+    height: 700px;
+}
+
+#bottomMenu{
+    display: flex;
+    flex-direction: column;
+    color: #222222;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+#bottomHead{
+    font-weight:bolder;
+    font-size: 60px;
+}
+
+
+#bottomName{
+    font-weight: bolder;
+    font-size: 19px;
+}
+
+#bottomDiv{
+    display: flex;
+    font-size: 19px;
+    gap: 16px;
+}
+#bottomDiv a{
+    display: flex;
+    background-color: #222222;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#bottomdivItem1{
+    transition:all 0.3s;
+    width: 155px;
+    height: 51px;
+}
+#bottomdivItem1:hover{
+    background-color: #676767;
+    width: 165px;
+}
+
+#bottomdivItem2{
+    transition:all 0.3s;
+    width: 130px;
+    height: 51px;
+}
+#bottomdivItem2:hover{
+    background-color: #676767;
+    width: 140px;
+}
+
+

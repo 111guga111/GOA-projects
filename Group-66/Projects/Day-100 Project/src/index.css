@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import "tailwindcss";
+
+*{
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Funnel Display", sans-serif;
+    width: 100vw;
+}
+
+main{
+    height: 100vh;
+}
+.blButtonStyle{
+    border:  #cacaca solid 2px;
+    color: white;
+    background-color: #01001a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.blButtonStyle:hover{
+    background-color: #01001a;
+    transform: scale(1.1);
+}
+
+.wtButtonStyle{
+    border:  #01001a solid 2px;
+    color: #01001a;
+    background-color: #dddddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.wtButtonStyle:hover{
+    background-color: #bbbbbb;
+    transform: scale(1.1);
+}
+
+.blInputStyle{
+    border:  #cacaca solid 2px;
+    color: white;
+    background-color: #262633;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.blInputStyle:focus{
+    background-color: #333333;
+    color: white;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.wtInputStyle{
+    border:  #01001a solid 2px;
+    color: black;
+    outline: none;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+.wtInputStyle:focus{
+    background-color: #c9c9c9;
+    outline: none;
+    color: black;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+
+.scrollbar-black::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+.scrollbar-black::-webkit-scrollbar-thumb:hover {
+  background-color: #000000; 
+}
+
+.scrollbar-black {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #727272;
+}
