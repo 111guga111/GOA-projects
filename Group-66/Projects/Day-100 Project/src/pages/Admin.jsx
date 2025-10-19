@@ -32,7 +32,7 @@ function Admin(){
                             key={i}
                             className="flex justify-between items-center border-2 border-gray-300 rounded-xl p-4 bg-gray-50 hover:bg-gray-100 transition-all"
                         >
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 p-1">
                                 <p><span className="font-semibold">Name:</span> {acco.name}</p>
                                 <p><span className="font-semibold">Email:</span> {acco.Email}</p>
                                 <p><span className="font-semibold">Pass:</span> {acco.Pass}</p>
