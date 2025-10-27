@@ -31,7 +31,7 @@ function Profile({ status, handleTemp, profileSave, tempProfile, tempName, tempB
             alt="Profile"
           />
           <div className="flex justify-center items-center gap-1 mt-5 p-1"> 
-            <input placeholder="Admin tempCode" name="admintempCode" onChange={handletempCode} value={tempCode} className="wtInputStyle text-center" />
+            <input placeholder="Admin Code" name="admintempCode" onChange={handletempCode} value={tempCode} className="wtInputStyle text-center" />
             <button className="blButtonStyle w-20" onClick={adminCheck} >Enter</button>
           </div>
         </div>

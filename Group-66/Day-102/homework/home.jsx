@@ -1,0 +1,1 @@
+//React Router is a library that lets you handle navigation in React apps — it changes what’s shown on the screen without reloading the page.
