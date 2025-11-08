@@ -1,5 +1,6 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap');
+@import "tailwindcss";
+
 
 *{
     --text-font-family: "Momo Signature", cursive;

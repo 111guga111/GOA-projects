@@ -16,7 +16,7 @@ function List(){
             {deserts.map((item, i) => 
                 
                 <li key={i} className="w-60">
-                    <div className=" relative flex justify-center w-100% border-2 h-55 bg-cover bg-center rounded-[5px]" style={{ backgroundImage: `url(${item.image.thumbnail})`, borderColor: cart.some(c => c.name === item.name) ? '#c73a0f' : 'transparent', }}>
+                    <div className=" relative flex justify-center w-100% border-2 h-55 bg-cover bg-center rounded-[5px]" style={{ backgroundImage: `url(${item.image.desktop})`, borderColor: cart.some(c => c.name === item.name) ? '#c73a0f' : 'transparent', }}>
                         {cart.some(c => c.name === item.name) ? 
                             (   
                                 

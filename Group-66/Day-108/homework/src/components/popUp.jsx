@@ -60,11 +60,11 @@ function PopUp(){
                 :
                 <section className="flex flex-col justify-center items-center gap-10 w-[600px] h-[250px] bg-white rounded-2xl">
                     <h1 className="font-bold text-4xl">Are you sure with your order?</h1>
-                    <div>
+                    <div className="flex gap-5">
                         <button className="h-[50px] w-[200px] bg-[#c73a0f] rounded-full text-white text-[20px] hover:bg-[#cb4921] cursor-pointer" onClick={over}>Yes</button> 
                         <button className="h-[50px] w-[200px] bg-white border border-[#bda09d] rounded-full  text-[20px] hover:bg-[#f0f0f0] cursor-pointer" onClick={popUp}>No</button>
-                    </div>
-                </section>
+                    </div> 
+                </section>  
             }
         </div>
 

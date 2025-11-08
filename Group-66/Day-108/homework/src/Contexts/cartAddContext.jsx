@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export const cartContext = createContext()
@@ -5,8 +6,17 @@ export const cartContext = createContext()
 
 
 function CartProvider({children}){
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState( JSON.parse(localStorage.getItem('Cart')) ||[])
     const [count, setCount] = useState(0)
+
+    useEffect(()=>{
+        localStorage.setItem('Cart', JSON.stringify(cart))
+
+        const all = cart.reduce((acc,cur)=> acc + cur.amount, 0)
+        
+
+        setCount(all)
+    },[cart])
 
     const HandleAdd = (item) => {
         const itemInCart = cart.find(cartItem => cartItem.name === item.name);
@@ -21,15 +31,15 @@ function CartProvider({children}){
             setCart(updatedCart);
             
         } else {
-            
+    
             setCart([...cart, { ...item, amount: 1 }]);
+
         }
 
-        setCount(prev => prev + 1)
+        
     }
     const handleRemove = (item) =>{
         setCart(cart.filter(som => som.name != item.name))
-        setCount(prev => prev - 1)
     }
 
     const increase = (item) =>{

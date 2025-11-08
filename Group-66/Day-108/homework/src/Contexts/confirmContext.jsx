@@ -12,10 +12,10 @@ function ConfirmContext({children}){
 
 
     return (
-        <confirmContext.Provider value={{pop,popUp}}>
+        <confirmContext.Provider value={{pop, popUp}}>
             {children}
         </confirmContext.Provider>
     )
 } 
 
-export default ConfirmContext;  
+export default ConfirmContext;   
