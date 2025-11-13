@@ -40,7 +40,7 @@ function Admin(){
                                 <button className="blButtonStyle" onClick={() => Delete(acco)}>Delete </button>
                             </div>
                             <img 
-                                src={account.Profile || '/img/profile.webp'} 
+                                src={acco.Profile || '/img/profile.webp'} 
                                 alt="Profile" 
                                 className="w-30 h-30 rounded-full border-3 object-cover ml-5"
                             />
