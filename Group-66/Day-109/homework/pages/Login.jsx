@@ -1,4 +1,4 @@
-import { useAuth } from "../context/auth.context";
+import { useAuth } from "../contexts/auth.context";
 import { useForm } from "../hooks/useForm";
 
 const Login = () => {
@@ -7,7 +7,6 @@ const Login = () => {
         password: ""
     });
     const { login } = useAuth();
-
 
     return (
         <main>
