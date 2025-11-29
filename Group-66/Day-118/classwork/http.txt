@@ -1,0 +1,16 @@
+
+HTTP is responsible for request/response actions.
+The user requests some action and receives data; HTTP acts as the messenger.
+
+HTTP structure:
+
+    Start line - Shows the request type (GET, POST, etc.)
+
+    Headers - Contain extra information about the request or response (like content type, length, cookies)
+
+    Body - The main content being sent or received (like HTML, JSON, or images)
+    
+.
+
+
+A port is a number where specific requests go, so the user receives the specific data.
