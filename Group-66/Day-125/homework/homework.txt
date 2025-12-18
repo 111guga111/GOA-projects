@@ -1,0 +1,9 @@
+GET – client requests data from the server
+
+POST – client sends data to create new data
+
+PUT – client replaces all data of a resource
+
+PATCH – client updates part of a resource
+
+DELETE – client deletes a resource

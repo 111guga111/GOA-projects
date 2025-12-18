@@ -11,15 +11,15 @@ import { CartProvider } from '../Context/cartContext.jsx'
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <StrictMode>
-      <CartProvider>
-        <FilteredCarsProvider>
-          <AuthProvider>
-            <AdminProvider>
-              <App />
-            </AdminProvider> 
-          </AuthProvider>
-        </FilteredCarsProvider>
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <FilteredCarsProvider>
+              <AdminProvider>
+                  <App />
+              </AdminProvider> 
+          </FilteredCarsProvider>
+        </CartProvider>
+      </AuthProvider>
     </StrictMode>
   </BrowserRouter>
 )

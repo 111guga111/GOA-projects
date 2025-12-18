@@ -1,0 +1,13 @@
+[
+  
+  {"id":1,"name":"Aspirin","category":"medicine","price":5.99},
+  {"id":2,"name":"Vitamin C","category":"medicine","price":12.50},
+  {"id":3,"name":"Laptop","category":"electronics","price":899.99},
+  {"id":4,"name":"Smartphone","category":"electronics","price":699.99},
+  {"id":5,"name":"Headphones","category":"electronics","price":199.99},
+  {"id":6,"name":"T-Shirt","category":"clothing","price":19.99},
+  {"id":7,"name":"Jeans","category":"clothing","price":49.99},
+  {"id":8,"name":"Jacket","category":"clothing","price":99.99},
+  {"id":9,"name":"Bread","category":"food","price":1.99}
+
+]

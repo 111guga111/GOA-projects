@@ -44,10 +44,13 @@ export const FilteredCarsProvider = ({ children }) => {
         setfilteredCars(filteredList);
         navigate('/filteredListing');
     }
-
+    const handleRemoveFilteredCar = (car) =>{
+        const newList = filteredCars.filter(filteredCar => filteredCar.model != car.model )
+        setfilteredCars(newList)
+    }
 
     return (
-        <FilteredCarsContext.Provider value={{filteredCars, handleSearch}}>
+        <FilteredCarsContext.Provider value={{filteredCars, handleSearch, handleRemoveFilteredCar}}>
             {children}
         </FilteredCarsContext.Provider>
     )

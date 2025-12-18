@@ -1,0 +1,23 @@
+TCP:
+    sends data with three way handshake, it makes sure data is sent properly and nothing is lost with correct order.
+    downside is the speed, it is slow, mostly used sending files or data that requires reliability rather then speed.
+        example:
+            if i want to send someone important message that needs to be send fully without any loss, i need tcp
+.
+
+UDP:
+    sends data without handshake and doesnt guarantee if data is sent safely,
+    but it is fast and is being used in games or videos.
+        example:
+            if i am playng a game and it lags, i want to continue where I am after the lag and dont need the lost data,
+            so i need udp
+.
+
+TLS:
+    its a security layer, that encrypts data so no one can read it while its being transferred.
+        example:
+            when i am sending my password that shouldnt be seen by public, i want it to be secure when sending data,
+            if a hacker attacks and tries to read my message it has to be encrypted so it cant be read, so i need TLS.
+.
+
+

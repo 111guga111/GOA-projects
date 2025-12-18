@@ -10,6 +10,7 @@ import FilteredListing from "../pages/filteredListing"
 import Listing from "../pages/Listing"
 import AdminPanel from "../pages/AdminPanel"
 import Cart from "../pages/Cart"
+import Footer from "../components/footer"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/adminPanel" element={<AdminPanel />}/>
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <Footer />
     </>
   )
 }

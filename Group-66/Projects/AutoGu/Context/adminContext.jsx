@@ -31,10 +31,15 @@ export const AdminProvider = ({children}) => {
 
     }
 
+    const handleRemoveAddedCar = (car) =>{
+        const newList = addedCars.filter(addedCar => addedCar.model != car.model )
+        setAddedCars(newList)
+    }
+
 
     return (<>
 
-        <AdminContext.Provider value={{addedCars,handleAdminSubmit, }} >
+        <AdminContext.Provider value={{addedCars,handleAdminSubmit,handleRemoveAddedCar }} >
             {children}
         </AdminContext.Provider>
     
