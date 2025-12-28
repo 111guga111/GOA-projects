@@ -1,0 +1,22 @@
+[
+  {
+    "name": "exampleProduct",
+    "price": "2637",
+    "rating": 5
+  },
+  {
+    "name": "phone",
+    "price": "1200",
+    "rating": 4
+  },
+  {
+    "name": "laptop",
+    "price": "3500",
+    "rating": 5
+  },
+  {
+    "name": "headphones",
+    "price": "450",
+    "rating": 4
+  }
+]

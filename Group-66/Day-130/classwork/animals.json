@@ -1,0 +1,17 @@
+[
+  { "id": 1,  "name": "Lion",      "type": "Mammal",    "habitat": "Savannah" },
+  { "id": 2,  "name": "Tiger",     "type": "Mammal",    "habitat": "Jungle" },
+  { "id": 3,  "name": "Elephant",  "type": "Mammal",    "habitat": "Savannah" },
+  { "id": 4,  "name": "Giraffe",   "type": "Mammal",    "habitat": "Savannah" },
+  { "id": 5,  "name": "Wolf",      "type": "Mammal",    "habitat": "Forest" },
+  { "id": 6,  "name": "Fox",       "type": "Mammal",    "habitat": "Forest" },
+  { "id": 7,  "name": "Bear",      "type": "Mammal",    "habitat": "Forest" },
+  { "id": 8,  "name": "Kangaroo",  "type": "Mammal",    "habitat": "Australia" },
+  { "id": 9,  "name": "Penguin",   "type": "Bird",      "habitat": "Antarctica" },
+  { "id": 10, "name": "Eagle",     "type": "Bird",      "habitat": "Mountains" },
+  { "id": 11, "name": "Shark",     "type": "Fish",      "habitat": "Ocean" },
+  { "id": 12, "name": "Dolphin",   "type": "Mammal",    "habitat": "Ocean" },
+  { "id": 13, "name": "Snake",     "type": "Reptile",   "habitat": "Desert" },
+  { "id": 14, "name": "Crocodile", "type": "Reptile",   "habitat": "River" },
+  { "id": 15, "name": "Frog",      "type": "Amphibian", "habitat": "Swamp" }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "exampleProduct",
+    "price": "2637",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "phone",
+    "price": "1200",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "laptop",
+    "price": "3500",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "headphones",
+    "price": "450",
+    "rating": 4
+  }
+]
